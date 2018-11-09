@@ -106,7 +106,7 @@
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
-            <enum type="AlgorithmSettings::SizeConstraints">AnySize</enum>
+            <enum type="AlgorithmSettings::SizeConstraints">WordAligned</enum>
             <key>forceSquared</key>
             <true/>
             <key>maxRects</key>
@@ -163,13 +163,13 @@
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
-            <uint>1</uint>
+            <uint>0</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMargin</key>
-            <uint>1</uint>
+            <uint>0</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -181,7 +181,15 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">src/mage_f_down_stand.png</key>
+            <key type="filename">src/mage_f_down_walk_1.png</key>
+            <key type="filename">src/mage_f_down_walk_2.png</key>
+            <key type="filename">src/mage_f_left_stand.png</key>
+            <key type="filename">src/mage_f_left_walk_1.png</key>
+            <key type="filename">src/mage_f_left_walk_2.png</key>
             <key type="filename">src/mage_f_right_stand.png</key>
+            <key type="filename">src/mage_f_right_walk_1.png</key>
+            <key type="filename">src/mage_f_right_walk_2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -194,10 +202,36 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">src/mage_f_up_stand.png</key>
+            <key type="filename">src/mage_f_up_walk_1.png</key>
+            <key type="filename">src/mage_f_up_walk_2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,36,64,72</rect>
+                <key>scale9Paddings</key>
+                <rect>32,36,64,72</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
             <filename>src/mage_f_right_stand.png</filename>
+            <filename>src/mage_f_down_stand.png</filename>
+            <filename>src/mage_f_down_walk_1.png</filename>
+            <filename>src/mage_f_down_walk_2.png</filename>
+            <filename>src/mage_f_left_stand.png</filename>
+            <filename>src/mage_f_left_walk_1.png</filename>
+            <filename>src/mage_f_left_walk_2.png</filename>
+            <filename>src/mage_f_right_walk_1.png</filename>
+            <filename>src/mage_f_right_walk_2.png</filename>
+            <filename>src/mage_f_up_stand.png</filename>
+            <filename>src/mage_f_up_walk_1.png</filename>
+            <filename>src/mage_f_up_walk_2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -1,22 +1,83 @@
 {
     "player": {
-        "key": "sprite-atlas",
+        "startingKey": "sprite-atlas",
+        "startingFrame": "mage_f_right_stand",
         "anims": {
-            "right": {
-                "stand": "mage_f_right_stand",
-                "walk": []
+            "standLeft": {
+                "key": "player-stand-left",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_left_stand" }
+                ],
+                "frameRate": 1,
+                "repeat": -1
             },
-            "left": {
-                "stand": "",
-                "walk": []
+            "standUp": {
+                "key": "player-stand-up",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_up_stand" }
+                ],
+                "frameRate": 1,
+                "repeat": -1
             },
-            "up": {
-                "stand": "",
-                "walk": []
+            "standRight": {
+                "key": "player-stand-right",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_right_stand" }
+                ],
+                "frameRate": 1,
+                "repeat": -1
             },
-            "down": {
-                "stand": "",
-                "walk": []
+            "standDown": {
+                "key": "player-stand-down",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_down_stand" }
+                ],
+                "frameRate": 1,
+                "repeat": -1
+            },
+            "walkLeft": {
+                "key": "player-walk-left",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_left_walk_1" },
+                    { "key": "sprite-atlas", "frame": "mage_f_left_stand" },
+                    { "key": "sprite-atlas", "frame": "mage_f_left_walk_2" },
+                    { "key": "sprite-atlas", "frame": "mage_f_left_stand" }
+                ],
+                "frameRate": 8,
+                "repeat": -1
+            },
+             "walkUp": {
+                "key": "player-walk-up",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_up_walk_1" },
+                    { "key": "sprite-atlas", "frame": "mage_f_up_stand" },
+                    { "key": "sprite-atlas", "frame": "mage_f_up_walk_2" },
+                    { "key": "sprite-atlas", "frame": "mage_f_up_stand" }
+                ],
+                "frameRate": 8,
+                "repeat": -1
+            },
+            "walkRight": {
+                "key": "player-walk-right",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_right_walk_1" },
+                    { "key": "sprite-atlas", "frame": "mage_f_right_stand" },
+                    { "key": "sprite-atlas", "frame": "mage_f_right_walk_2" },
+                    { "key": "sprite-atlas", "frame": "mage_f_right_stand" }
+                ],
+                "frameRate": 8,
+                "repeat": -1
+            },
+            "walkDown": {
+                "key": "player-walk-down",
+                "frames": [
+                    { "key": "sprite-atlas", "frame": "mage_f_down_walk_1" },
+                    { "key": "sprite-atlas", "frame": "mage_f_down_stand" },
+                    { "key": "sprite-atlas", "frame": "mage_f_down_walk_2" },
+                    { "key": "sprite-atlas", "frame": "mage_f_down_stand" }
+                ],
+                "frameRate": 8,
+                "repeat": -1
             }
         },
         "attributes": {

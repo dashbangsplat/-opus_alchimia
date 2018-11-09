@@ -4,11 +4,137 @@
 			"image": "spriteatlas.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 74,
-				"h": 74
+				"w": 256,
+				"h": 256
 			},
 			"scale": 1,
 			"frames": [
+				{
+					"filename": "mage_f_down_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_down_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 0,
+						"y": 72,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_down_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 64,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 0,
+						"y": 144,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 64,
+						"y": 72,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 128,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					}
+				},
 				{
 					"filename": "mage_f_right_stand",
 					"rotated": false,
@@ -24,10 +150,115 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 1,
-						"y": 1,
+						"x": 192,
+						"y": 0,
 						"w": 64,
 						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 64,
+						"y": 144,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 128,
+						"y": 72,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 192,
+						"y": 72,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 128,
+						"y": 144,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 68
+					},
+					"frame": {
+						"x": 192,
+						"y": 144,
+						"w": 64,
+						"h": 68
 					}
 				}
 			]
@@ -36,6 +267,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:0620b20f6b65b50727ed412f1762ad6b:b96a0064501e98ae069f088ac5cf7938:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:94e3e39f4d10178e871f9b55b85035f1:b8f5e5aaeb0a97a7b825945e3e866fcf:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }

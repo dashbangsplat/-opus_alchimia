@@ -12,6 +12,18 @@ export default (superclass) => class extends superclass {
         this.walkState = 'left';
     }
 
+    isWalkingRight() {
+        return this.walkState && this.walkState === 'right';
+    }
+
+    isWalkingLeft() {
+        return this.walkState && this.walkState === 'left';
+    }
+
+    isStopped() {
+        return this.walkState == null;
+    }
+
     stopWalking() {
         this.walkState = null;
     }
