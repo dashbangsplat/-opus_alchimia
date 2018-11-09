@@ -1,5 +1,5 @@
 // json imports
-// import assetsConfig from '../config/assets.json';
+import gameConfig from '../config/game.json';
 
 // web fonts
 // import WebFont from 'webfontloader';
@@ -7,9 +7,10 @@
 // require('../../assets/fonts/[font].ttf');
 
 // require in other assets to be included but not added to cache at this time
-// require('../../assets/sounds/sound.wav');
-// require('../../assets/json/tilemap.json');
-// require('../../assets/images/tileset.png');
+require('../../assets/json/world.json');
+require('../../assets/images/world_tileset.png');
+require('../../assets/json/spriteatlas.json');
+require('../../assets/images/spriteatlas.png');
 require('../../assets/images/play.png');
 
 export default class LoadingScene extends Phaser.Scene {
@@ -23,8 +24,14 @@ export default class LoadingScene extends Phaser.Scene {
     }
 
     preload () {
-        // load json configuration files
-        // this.cache.json.add('assetsConfig', assetsConfig);
+        // load world tilemap and it's tilesets
+        gameConfig.worldMap.tilesets.forEach(tileset => {
+            this.load.image(tileset.key, tileset.file);
+        });
+        this.load.tilemapTiledJSON(gameConfig.worldMap.key, gameConfig.worldMap.file);
+
+        // load sprite atlas
+        this.load.atlas(gameConfig.spriteAtlas.key, gameConfig.spriteAtlas.file, gameConfig.spriteAtlas.json);
 
         // load web fonts
         /* WebFont.load({

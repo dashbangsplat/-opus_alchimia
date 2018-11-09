@@ -2,17 +2,19 @@ import 'phaser';
 import 'lodash';
 import 'webfontloader';
 
+import gameConfig from './config/game';
+
 require('./index.html'); // so we get it in the dist
 
 // import scenes
 import LoadingScene from './scenes/loading';
 import MainMenuScene from './scenes/main-menu';
-import PlayGameScene from './scenes/play-game';
+import WorldMapScene from './scenes/world-map';
 
-var gameConfig = {
+var phaserGameConfig = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: gameConfig.screen.width,
+    height: gameConfig.screen.height,
     backgroundColor: '#000000',
     physics: {
         default: 'arcade',
@@ -20,7 +22,7 @@ var gameConfig = {
             //debug: true, // enable to see physics bodies outlined
         }
     },
-    scene: [LoadingScene, MainMenuScene, PlayGameScene]
+    scene: [LoadingScene, MainMenuScene, WorldMapScene]
 }
 
-let game = new Phaser.Game(gameConfig);
+let game = new Phaser.Game(phaserGameConfig);

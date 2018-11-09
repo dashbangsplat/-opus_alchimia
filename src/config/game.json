@@ -1,0 +1,43 @@
+{
+    "screen": {
+        "width": 800,
+        "height": 600
+    },
+    "worldMap": {
+        "key": "world-map",
+        "file": "world.json",
+        "tilesets": [
+            {
+                "key": "world_tileset",
+                "file": "world_tileset.png"
+            }
+        ],
+        "tileLayers": [
+            {
+                "name": "scenery",
+                "tileset": "world_tileset",
+                "depth": -2
+            },
+            {
+                "name": "background",
+                "tileset": "world_tileset",
+                "depth": -1
+            },
+            {
+                "name": "middle",
+                "tileset": "world_tileset",
+                "depth": 0
+            },
+            {
+                "name": "foreground",
+                "tileset": "world_tileset",
+                "depth": 1
+            }
+        ]
+    },
+    "spriteAtlas": {
+        "key": "sprite-atlas",
+        "json": "spriteatlas.json",
+        "file": "spriteatlas.png"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "player": {
+        "key": "sprite-atlas",
+        "anims": {
+            "right": {
+                "stand": "mage_f_right_stand",
+                "walk": []
+            },
+            "left": {
+                "stand": "",
+                "walk": []
+            },
+            "up": {
+                "stand": "",
+                "walk": []
+            },
+            "down": {
+                "stand": "",
+                "walk": []
+            }
+        },
+        "attributes": {
+            "gravity": 400,
+            "walkSpeed": 100,
+            "jumpSpeed": 300,
+            "jumpDuration": 500,
+            "bounce": 0.1
+        }
+    }
+}
