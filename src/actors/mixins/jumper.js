@@ -15,11 +15,13 @@ export default (superclass) => class extends superclass {
         this.jumpTime = 0;
     }
 
+    get isJumping () { return this._isJumping; }
+
     jump() {
-        if (!this.isJumping) {
+        if (!this._isJumping) {
             this.groundY = this.y;
             this.onGround  = false;
-            this.isJumping = true;
+            this._isJumping = true;
             this.jumpTime = 0;
         }
     }
@@ -29,13 +31,13 @@ export default (superclass) => class extends superclass {
     preUpdate (time, delta) {
 
         if (this.gravitySpeed && this.jumpSpeed && this.jumpDuration) {
-            if (this.isJumping) {
+            if (this._isJumping) {
                 this.jumpTime += delta;
 
                 if (this.jumpTime > this.jumpDuration) {
                     if (this.y >= this.groundY) {
                         this.onGround = true;
-                        this.isJumping = false;
+                        this._isJumping = false;
                         this.jumpTime = 0;
                     }
                 }

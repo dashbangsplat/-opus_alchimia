@@ -1,6 +1,6 @@
 import gameConfig from '../config/game';
 
-import Player from '../actors/player';
+import Player from '../actors/actor/player';
 
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
