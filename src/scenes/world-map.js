@@ -59,6 +59,7 @@ export default class WorldMapScene extends Phaser.Scene {
     setupPlayer () {
         this.player = new Player(this);
         this.player.setX(this.player.width / 2);
+        this.player.setY(this.tilemap.heightInPixels - 250);
 
         this.cameras.main.startFollow(this.player, true);
 

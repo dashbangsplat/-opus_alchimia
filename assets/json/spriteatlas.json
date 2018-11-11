@@ -260,6 +260,216 @@
 						"w": 64,
 						"h": 68
 					}
+				},
+				{
+					"filename": "potion_circle_white_l",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 0,
+						"y": 216,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_m",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 0,
+						"y": 232,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_s",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 16,
+						"y": 216,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_xl",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 16,
+						"y": 232,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_xs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 32,
+						"y": 216,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_l",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 32,
+						"y": 232,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_m",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 48,
+						"y": 216,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_s",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 48,
+						"y": 232,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_xl",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 64,
+						"y": 216,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_xs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 64,
+						"y": 232,
+						"w": 16,
+						"h": 16
+					}
 				}
 			]
 		}
@@ -267,6 +477,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:94e3e39f4d10178e871f9b55b85035f1:b8f5e5aaeb0a97a7b825945e3e866fcf:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:58a2d842eb3e63053124bd29df217864:2c667ea5201f9b4a8fdc25bde21efc65:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }

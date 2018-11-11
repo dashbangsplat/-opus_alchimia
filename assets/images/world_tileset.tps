@@ -26,15 +26,15 @@
             </struct>
         </array>
         <key>allowRotation</key>
-        <true/>
+        <false/>
         <key>shapeDebug</key>
         <false/>
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>phaser</string>
+        <string>spritesheet-only</string>
         <key>textureFileName</key>
-        <filename>spriteatlas.png</filename>
+        <filename>world_tileset.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -102,11 +102,11 @@
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
-            <enum type="AlgorithmSettings::SizeConstraints">WordAligned</enum>
+            <enum type="AlgorithmSettings::SizeConstraints">AnySize</enum>
             <key>forceSquared</key>
             <true/>
             <key>maxRects</key>
@@ -117,7 +117,7 @@
             <key>basic</key>
             <struct type="AlgorithmBasicSettings">
                 <key>sortBy</key>
-                <enum type="AlgorithmBasicSettings::SortBy">Best</enum>
+                <enum type="AlgorithmBasicSettings::SortBy">Name</enum>
                 <key>order</key>
                 <enum type="AlgorithmBasicSettings::Order">Ascending</enum>
             </struct>
@@ -128,13 +128,7 @@
             </struct>
         </struct>
         <key>dataFileNames</key>
-        <map type="GFileNameMap">
-            <key>json</key>
-            <struct type="DataFile">
-                <key>name</key>
-                <filename>../json/spriteatlas.json</filename>
-            </struct>
-        </map>
+        <map type="GFileNameMap"/>
         <key>multiPack</key>
         <false/>
         <key>forceIdenticalLayout</key>
@@ -149,9 +143,9 @@
             <string></string>
         </struct>
         <key>autoAliasEnabled</key>
-        <true/>
+        <false/>
         <key>trimSpriteNames</key>
-        <true/>
+        <false/>
         <key>prependSmartFolderName</key>
         <false/>
         <key>autodetectAnimations</key>
@@ -169,7 +163,7 @@
             <key>trimMargin</key>
             <uint>0</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -181,64 +175,8 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">src/mage_f_down_stand.png</key>
-            <key type="filename">src/mage_f_down_walk_1.png</key>
-            <key type="filename">src/mage_f_down_walk_2.png</key>
-            <key type="filename">src/mage_f_left_stand.png</key>
-            <key type="filename">src/mage_f_left_walk_1.png</key>
-            <key type="filename">src/mage_f_left_walk_2.png</key>
-            <key type="filename">src/mage_f_right_stand.png</key>
-            <key type="filename">src/mage_f_right_walk_1.png</key>
-            <key type="filename">src/mage_f_right_walk_2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,18,32,36</rect>
-                <key>scale9Paddings</key>
-                <rect>16,18,32,36</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">src/mage_f_up_stand.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,17,32,34</rect>
-                <key>scale9Paddings</key>
-                <rect>16,17,32,34</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">src/mage_f_up_walk_1.png</key>
-            <key type="filename">src/mage_f_up_walk_2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>32,36,64,72</rect>
-                <key>scale9Paddings</key>
-                <rect>32,36,64,72</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">src/potion_circle_white_l.png</key>
-            <key type="filename">src/potion_circle_white_m.png</key>
-            <key type="filename">src/potion_circle_white_s.png</key>
-            <key type="filename">src/potion_circle_white_xl.png</key>
-            <key type="filename">src/potion_circle_white_xs.png</key>
-            <key type="filename">src/potion_square_white_l.png</key>
-            <key type="filename">src/potion_square_white_m.png</key>
-            <key type="filename">src/potion_square_white_s.png</key>
-            <key type="filename">src/potion_square_white_xl.png</key>
-            <key type="filename">src/potion_square_white_xs.png</key>
+            <key type="filename">src/tiles/grassblock1.png</key>
+            <key type="filename">src/tiles/grassblock2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -254,28 +192,8 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>src/mage_f_down_walk_1.png</filename>
-            <filename>src/mage_f_down_walk_2.png</filename>
-            <filename>src/mage_f_left_walk_1.png</filename>
-            <filename>src/mage_f_left_walk_2.png</filename>
-            <filename>src/mage_f_right_walk_1.png</filename>
-            <filename>src/mage_f_right_walk_2.png</filename>
-            <filename>src/mage_f_up_walk_1.png</filename>
-            <filename>src/mage_f_up_walk_2.png</filename>
-            <filename>src/mage_f_down_stand.png</filename>
-            <filename>src/mage_f_left_stand.png</filename>
-            <filename>src/mage_f_right_stand.png</filename>
-            <filename>src/mage_f_up_stand.png</filename>
-            <filename>src/potion_circle_white_l.png</filename>
-            <filename>src/potion_circle_white_m.png</filename>
-            <filename>src/potion_circle_white_s.png</filename>
-            <filename>src/potion_circle_white_xl.png</filename>
-            <filename>src/potion_circle_white_xs.png</filename>
-            <filename>src/potion_square_white_l.png</filename>
-            <filename>src/potion_square_white_m.png</filename>
-            <filename>src/potion_square_white_s.png</filename>
-            <filename>src/potion_square_white_xl.png</filename>
-            <filename>src/potion_square_white_xs.png</filename>
+            <filename>src/tiles/grassblock1.png</filename>
+            <filename>src/tiles/grassblock2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
@@ -290,7 +208,7 @@
         <key>packNormalMaps</key>
         <false/>
         <key>autodetectNormalMaps</key>
-        <true/>
+        <false/>
         <key>normalMapFilter</key>
         <string></string>
         <key>normalMapSuffix</key>

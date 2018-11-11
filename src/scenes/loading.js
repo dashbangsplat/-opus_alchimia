@@ -7,6 +7,7 @@ import gameConfig from '../config/game.json';
 // require('../../assets/fonts/[font].ttf');
 
 // require in other assets to be included but not added to cache at this time
+require('../../assets/icons/favicon.ico');
 require('../../assets/json/world.json');
 require('../../assets/images/world_tileset.png');
 require('../../assets/json/spriteatlas.json');
