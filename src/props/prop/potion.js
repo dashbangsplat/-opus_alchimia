@@ -1,18 +1,12 @@
 import propConfig from '../config/prop';
 
-import Throwable from './mixins/throwable';
+import Prop from '../prop';
 
-export default class Potion extends 
-    Throwable (
-        Phaser.Physics.Arcade.Image
-    ) {
+export default class Potion extends Prop {
     constructor (scene, x = 0, y = 0) {
         super(scene, x, y, propConfig.xlCirclePotion.key, propConfig.xlCirclePotion.frame);
 
         this.config = propConfig.xlCirclePotion;
-
-        this.scene.add.existing(this);
-        this.scene.physics.add.existing(this);
 
         // TODO add attributes
     }
