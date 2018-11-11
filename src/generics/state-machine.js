@@ -20,15 +20,16 @@ export default class StateMachine {
 
         this._possibleStates[stateKey] = stateClass;
     }
-    setState (state, initialData, addStateIfNotDefined = false) {
+    
+    setState (state, initialData) {
         if (!state) throw 'state is not defined';
 
         let stateKey = (state instanceof State) ? state.key : (state.prototype && state.prototype instanceof State) ? new state().key : state;
 
-        // preadd state if we are passing in a state object and want it added (e.g. if we 'start' with a new state we haven't added yet)
+        // preadd state if we are passing in a state object that we don't know about yet
         if (!this._possibleStates[stateKey] && state.prototype instanceof State) this.addState(state);
 
-        if (!this._possibleStates[stateKey] && !addStateIfNotDefined) throw `${stateKey} not found.`;
+        if (!this._possibleStates[stateKey]) throw `${stateKey} not found.`;
 
         this._currentState = new this._possibleStates[stateKey]();
 
@@ -42,7 +43,7 @@ export default class StateMachine {
     get currentState () { return this._currentState }
 
     start (state, initialData) {
-        return this.setState(state, initialData, true);
+        return this.setState(state, initialData);
     }
 
     update (data) {

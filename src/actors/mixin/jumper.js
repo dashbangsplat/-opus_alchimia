@@ -29,12 +29,15 @@ export default (superclass) => class extends superclass {
     // NOTE! anything using this mixins will need to call super.preUpdate so we call this function
     // just this mixin does in case it is embedded in other mixins
     preUpdate (time, delta) {
+        let gravity = this.attributes.gravity.value;
+        let jumpVelocity = this.attributes.jumpvelocity.value;
+        let jumpDuration = this.attributes.jumpduration.value;
 
-        if (this.gravitySpeed && this.jumpSpeed && this.jumpDuration) {
+        if (gravity && jumpVelocity && jumpDuration) {
             if (this._isJumping) {
                 this.jumpTime += delta;
 
-                if (this.jumpTime > this.jumpDuration) {
+                if (this.jumpTime > jumpDuration) {
                     if (this.y >= this.groundY) {
                         this.onGround = true;
                         this._isJumping = false;
@@ -42,12 +45,12 @@ export default (superclass) => class extends superclass {
                     }
                 }
                 else {
-                    if (this.jumpTime < this.jumpDuration / 1.5) {
-                        this.setVelocityY(-this.jumpSpeed);
+                    if (this.jumpTime < jumpDuration / 1.5) {
+                        this.setVelocityY(-jumpVelocity);
                     }
                     else {
                         this.setVelocityY(0);
-                        this.setGravityY(this.gravitySpeed);
+                        this.setGravityY(gravity);
                     }
                 }
             }

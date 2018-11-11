@@ -1,10 +1,6 @@
 export default (superclass) => class extends superclass {
 
-    setWalkSpeed(walkSpeed) {
-        this.walkSpeed = walkSpeed;
-    }
-
-    walkRight() {
+   walkRight() {
         this.walkState = 'right';
     }
 
@@ -31,15 +27,16 @@ export default (superclass) => class extends superclass {
     // NOTE! anything using this mixins will need to call super.preUpdate so we call this function
     // just this mixin does in case it is embedded in other mixins
     preUpdate (time, delta) {
-        if (this.walkSpeed) {
+        let walkVelocity = this.attributes.walkvelocity.value;
+        if (walkVelocity) {
             let vX = 0;
 
             switch (this.walkState) {
                 case 'right':
-                    vX = this.walkSpeed;
+                    vX = walkVelocity;
                     break;
                 case 'left':
-                    vX = -(this.walkSpeed);
+                    vX = -walkVelocity;
                     break;
                 default:
                     vX = 0;
