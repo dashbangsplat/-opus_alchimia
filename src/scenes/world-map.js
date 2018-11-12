@@ -73,8 +73,7 @@ export default class WorldMapScene extends Phaser.Scene {
     addColliders (thing) {
         let callback = thing.triggerCollisionHandlers ? (object1, object2) => { thing.triggerCollisionHandlers(object1, object2); } : () => {};
 
-        this.physics.add.collider(thing, this.physics.world, callback); // thing to collide with world
-        this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
-        this.physics.add.collider(thing, this.actors, callback);
+        if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
+        if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
     }
 };
