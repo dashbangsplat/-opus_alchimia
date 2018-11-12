@@ -25,7 +25,7 @@ export default class WorldMapScene extends Phaser.Scene {
     create () {
         this.setupMap();
 
-        this.setupPlayer();
+        this.setupActors();
     }
 
     update () {
@@ -57,12 +57,16 @@ export default class WorldMapScene extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, this.tilemap.widthInPixels, this.tilemap.heightInPixels);
     }
 
-    setupPlayer () {
-        this.player = new Player(this);
-        this.player.setX(this.player.width / 2);
-        this.player.setY(this.tilemap.heightInPixels - 250);
+    setupActors () {
+        this.actors = this.add.group();
 
-        this.cameras.main.startFollow(this.player, true);
+        let player = new Player(this);
+        player.setX(player.width / 2);
+        player.setY(this.tilemap.heightInPixels - 250);
+
+        this.cameras.main.startFollow(player, true);
+
+        this.actors.add(player);
     }
 
     // provides an interface for actors and props to setup colliders
@@ -71,5 +75,6 @@ export default class WorldMapScene extends Phaser.Scene {
 
         this.physics.add.collider(thing, this.physics.world, callback); // thing to collide with world
         this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
+        this.physics.add.collider(thing, this.actors, callback);
     }
 };
