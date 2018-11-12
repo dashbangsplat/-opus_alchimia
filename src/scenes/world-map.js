@@ -1,6 +1,7 @@
 import gameConfig from '../config/game';
 
 import Player from '../actors/actor/player';
+import Potion from '../props/prop/potion';
 
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
@@ -25,6 +26,12 @@ export default class WorldMapScene extends Phaser.Scene {
         this.setupMap();
 
         this.setupPlayer();
+
+        let potion = new Potion(this);
+        potion.setX(potion.width / 2);
+        potion.setY(this.tilemap.heightInPixels - 250);
+
+        this.addColliders(potion);
     }
 
     update () {
@@ -63,7 +70,11 @@ export default class WorldMapScene extends Phaser.Scene {
 
         this.cameras.main.startFollow(this.player, true);
 
-        this.physics.add.collider(this.player, this.physics.world); // player to collide with world
-        this.physics.add.collider(this.player, this.tileLayers.middle); // player to collide with map
+        this.addColliders(this.player);
+    }
+
+    addColliders (thing) {
+        this.physics.add.collider(thing, this.physics.world); // thing to collide with world
+        this.physics.add.collider(thing, this.tileLayers.middle); // thing to collide with map
     }
 };

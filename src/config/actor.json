@@ -82,8 +82,8 @@
         },
         "attributes": {
             "gravity": 400,
-            "walkSpeed": 100,
-            "jumpSpeed": 300,
+            "walkVelocity": 100,
+            "jumpVelocity": 300,
             "jumpDuration": 500,
             "bounce": 0.1
         }

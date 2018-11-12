@@ -11,11 +11,12 @@ export default class Player extends Actor {
         this.config = actorConfig.player;
 
         // setup attributes
+        console.log(this.attributes);
         this.attributes.bounce.value = this.config.attributes.bounce;
-        this.attributes.walkvelocity.value = this.config.attributes.walkSpeed;
+        this.attributes.walkVelocity.value = this.config.attributes.walkVelocity;
         this.attributes.gravity.value = this.config.attributes.gravity;
-        this.attributes.jumpvelocity.value = this.config.attributes.jumpSpeed;
-        this.attributes.jumpduration.value = this.config.attributes.jumpDuration;
+        this.attributes.jumpVelocity.value = this.config.attributes.jumpVelocity;
+        this.attributes.jumpDuration.value = this.config.attributes.jumpDuration;
 
         // setup player animations
         Object.keys(this.config.anims).forEach(animKey => {

@@ -1,6 +1,7 @@
 export default class Attribute {
     constructor (name = 'Change Me', description = 'Change Me') {
-        this._key = this.constructor.name.toLowerCase(); // lowercase the class name to define the key
+        let thisName = this.constructor.name;
+        this._key = thisName.charAt(0).toLowerCase() + thisName.slice(1);
         this._name = name;
         this._description = description;
 

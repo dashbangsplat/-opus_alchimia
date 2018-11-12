@@ -1,4 +1,4 @@
-import propConfig from '../config/prop';
+import propConfig from '../../config/prop';
 
 import Prop from '../prop';
 
@@ -8,7 +8,8 @@ export default class Potion extends Prop {
 
         this.config = propConfig.xlCirclePotion;
 
-        // TODO add attributes
+        // setup attributes
+        this.attributes.gravity.value = this.config.attributes.gravity;
     }
 
     // will only be invoked if added to gameobject (not just physics object)

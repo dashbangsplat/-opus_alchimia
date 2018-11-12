@@ -3,7 +3,8 @@
         "key": "sprite-atlas",
         "frame": "potion_circle_white_xl",
         "attributes": {
-            
+            "gravity": 400,
+            "bounce": 0.2
         }
     }
 }
