@@ -1,5 +1,6 @@
 import State from '../../../generics/state';
 import ChangeState from '../../../generics/state-action/change-state';
+import Standing from '../player-movement-state/standing';
 import Idle from './idle';
 
 export default class ThrowingPotion extends State {
@@ -14,6 +15,12 @@ export default class ThrowingPotion extends State {
         if (!potion) return new ChangeState(Idle, { "player": player });
 
         player.scene.addColliders(potion);
+
+        if (player.movement.currentState instanceof Standing) {
+            let facing = target.x < player.x ? 'left' : 'right';
+
+            player.movement.currentState.setStandingAnimation(player, facing); 
+        }
 
         player.throw(potion, player, target);
 

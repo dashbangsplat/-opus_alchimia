@@ -8,16 +8,9 @@ export default class Standing extends State {
     init (data) {
         // set player using destructuring
         let { player } = data;
-
-        // set animateStandingLeft and animateStandingRight using destructuring
-        let { "player": { "config": { "anims": { "standLeft": { "key": animateStandingLeft }, "standRight": { "key": animateStandingRight } } } } } = data;
-
-        if (player.isWalkingLeft()) {
-            player.play(animateStandingLeft);
-        }
-        else if (player.isWalkingRight()) {
-            player.play(animateStandingRight);
-        }
+       
+        let facing = player.isWalkingLeft() ? 'left' : player.isWalkingRight() ? 'right' : ''; 
+        this.setStandingAnimation(player, facing); 
 
         player.stopWalking();
 
@@ -38,5 +31,19 @@ export default class Standing extends State {
         if (jump.isDown ) return new ChangeState(Jumping, { "player": player });
         
         return super.run(data);
+    }
+
+    setStandingAnimation (player, facing = '') {
+        // set animateStandingLeft and animateStandingRight using destructuring
+        let { "config": { "anims": { "standLeft": { "key": animateStandingLeft }, "standRight": { "key": animateStandingRight } } } } = player;
+
+        switch (facing) {
+            case 'left':
+                player.play(animateStandingLeft);
+                break;
+            case 'right':
+                player.play(animateStandingRight);
+                break;
+        }
     }
 }
