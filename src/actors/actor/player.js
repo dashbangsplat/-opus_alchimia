@@ -41,6 +41,10 @@ export default class Player extends Actor {
         this.action.start(Idle, { "player": this });
     }
 
+    setMovementStanding () {
+        this.movement.setState(Standing, { "player": this });
+    }
+
     // will only be invoked if added to gameobject (not just physics object)
     preUpdate (time, delta) {
         this.movement.update({ "player": this });

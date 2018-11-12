@@ -10,18 +10,23 @@ export default class ThrowingPotion extends State {
 
         let target = { x: player.scene.input.mousePointer.worldX, y: player.scene.input.mousePointer.worldY };
 
+        // get an available potion from the potion pool
         var potion = player.potions.get();
 
+        // no potion available to throw from potion pool
         if (!potion) return new ChangeState(Idle, { "player": player });
 
+        // add colliders for the potion
         player.scene.addColliders(potion);
 
-        if (player.movement.currentState instanceof Standing) {
-            let facing = target.x < player.x ? 'left' : 'right';
+        // face the direction of throwing
+        if (!(player.movement.currentState instanceof Standing)) player.setMovementStanding();
 
-            player.movement.currentState.setStandingAnimation(player, facing); 
-        }
+        let facing = target.x < player.x ? 'left' : 'right';
 
+        player.movement.currentState.setStandingAnimation(player, facing); 
+
+        // throw it!
         player.throw(potion, player, target);
 
         return super.init(data);
