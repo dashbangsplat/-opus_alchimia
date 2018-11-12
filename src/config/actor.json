@@ -81,11 +81,12 @@
             }
         },
         "attributes": {
+            "bounce": 0.1,
             "gravity": 400,
-            "walkVelocity": 100,
-            "jumpVelocity": 300,
             "jumpDuration": 500,
-            "bounce": 0.1
+            "jumpVelocity": 300,
+            "strength": 10,
+            "walkVelocity": 100
         }
     }
 }

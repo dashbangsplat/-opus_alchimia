@@ -1,7 +1,8 @@
 import Throwable from './mixin/throwable';
 
 import Attributes from '../generics/attributes';
-import gravity from './prop-attribute/gravity';
+import Gravity from './prop-attribute/gravity';
+import Active from './prop-attribute/active';
 
 export default class Prop extends
     Throwable ( 
@@ -19,7 +20,8 @@ export default class Prop extends
 
         // attributes
         this._attributes = new Attributes();
-        this._attributes.addAttribute(new gravity(this));
+        this._attributes.addAttribute(new Gravity(this));
+        this._attributes.addAttribute(new Active(this));
     }
 
     get attributes () { return this._attributes }

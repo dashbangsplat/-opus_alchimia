@@ -26,12 +26,6 @@ export default class WorldMapScene extends Phaser.Scene {
         this.setupMap();
 
         this.setupPlayer();
-
-        let potion = new Potion(this);
-        potion.setX(potion.width / 2);
-        potion.setY(this.tilemap.heightInPixels - 250);
-
-        this.addColliders(potion);
     }
 
     update () {

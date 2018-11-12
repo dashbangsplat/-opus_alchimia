@@ -1,4 +1,4 @@
-export default (superclass) => class extends superclass {
+export default (superclass) => class Walker extends superclass {
     walkRight() {
         this.walkState = 'right';
     }

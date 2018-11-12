@@ -1,8 +1,14 @@
-export default (superclass) => class extends superclass {
-    // TODO add thrower methods and preUpdate
-    // NOTE! anything using this mixins will need to call super.preUpdate so we call this function
-    // just this mixin does in case it is embedded in other mixins
-    preUpdate (time, delta) {
-        if (super.preUpdate) super.preUpdate(time, delta);
+import Prop from '../../props/prop';
+
+export default (superclass) => class Thrower extends superclass {
+
+    throw (prop, origin, target) {
+        if (!(prop instanceof Prop)) throw `${prop} is not a Prop`;
+
+        let angleToTarget = Phaser.Math.Angle.BetweenPoints(origin, target);
+
+        let velocity = prop.scene.physics.velocityFromRotation(angleToTarget, this.attributes.strength.value * 30);
+
+        prop.prepareToThrow(origin.x, origin.y, velocity, this.attributes.strength.value * 200);
     }
 }

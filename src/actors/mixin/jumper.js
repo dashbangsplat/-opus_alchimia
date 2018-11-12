@@ -1,4 +1,4 @@
-export default (superclass) => class extends superclass {
+export default (superclass) => class Jumper extends superclass {
     get isJumping () { return this._isJumping; }
 
     jump() {
@@ -7,6 +7,9 @@ export default (superclass) => class extends superclass {
             this.onGround  = false;
             this._isJumping = true;
             this.jumpTime = 0;
+
+            let jumpVelocity = this.attributes.jumpVelocity.value;
+            this.setVelocityY(-jumpVelocity);
         }
     }
 
@@ -28,19 +31,10 @@ export default (superclass) => class extends superclass {
                         this.jumpTime = 0;
                     }
                 }
-                else {
-                    if (this.jumpTime < jumpDuration / 1.5) {
-                        this.setVelocityY(-jumpVelocity);
-                    }
-                    else {
-                        this.setVelocityY(0);
-                        this.setGravityY(gravity);
-                    }
+                else if (this.jumpTime > jumpDuration / 1.5) {
+                    this.setVelocityY(0);
                 }
             }
-        }
-        else {
-            console.log(`Please set gravity, jump speed and jump duration so that ${typeof this} can jump!`);
         }
 
         if (super.preUpdate) super.preUpdate(time, delta);

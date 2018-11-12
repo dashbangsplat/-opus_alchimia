@@ -1,7 +1,7 @@
 import Actor from './actor';
-import Attribute from '../generics/attribute';
+import BoolAttribute from '../generics/attribute/bool';
 
-export default class ActorAttribute extends Attribute {
+export default class ActorAttribute extends BoolAttribute {
     constructor (actor, name, description) {
         if (!actor || !(actor instanceof Actor)) throw `${actor} is not an actor`;
 

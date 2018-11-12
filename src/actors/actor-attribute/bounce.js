@@ -1,6 +1,6 @@
-import ActorAttribute from '../actor-attribute';
+import ActorNumberAttribute from '../actor-number-attribute';
 
-export default class Bounce extends ActorAttribute {
+export default class Bounce extends ActorNumberAttribute {
     constructor (actor) {
         super(actor, 'Bounce', 'The amount of bounce that happens when colliding with something.');
 

@@ -1,6 +1,6 @@
-import PropAttribute from '../prop-attribute';
+import PropNumberAttribute from '../prop-number-attribute';
 
-export default class Gravity extends PropAttribute {
+export default class Gravity extends PropNumberAttribute {
     constructor (actor) {
         super(actor, 'Gravity', 'The amount of gravity, downward velocity, generally being applied.');
 

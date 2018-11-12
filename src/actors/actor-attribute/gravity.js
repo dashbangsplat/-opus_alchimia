@@ -1,6 +1,6 @@
-import ActorAttribute from '../actor-attribute';
+import ActorNumberAttribute from '../actor-number-attribute';
 
-export default class Gravity extends ActorAttribute {
+export default class Gravity extends ActorNumberAttribute {
     constructor (actor) {
         super(actor, 'Gravity', 'The amount of gravity, downward velocity, generally being applied.');
 

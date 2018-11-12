@@ -1,7 +1,7 @@
 import Prop from './prop';
-import Attribute from '../generics/attribute';
+import NumberAttribute from '../generics/attribute/number';
 
-export default class PropAttribute extends Attribute {
+export default class PropNumberAttribute extends NumberAttribute {
     constructor (prop, name, description) {
         if (!prop || !(prop instanceof Prop)) throw `${prop} is not an prop`;
 
