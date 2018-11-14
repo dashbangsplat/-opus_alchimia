@@ -1,7 +1,9 @@
 import gameConfig from '../config/game';
 
 import Player from '../actors/actor/player';
-import Potion from '../props/prop/potion';
+import Cauldron from '../props/prop-static/cauldron';
+
+import PropStatic from '../props/prop-static';
 
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
@@ -23,7 +25,12 @@ export default class WorldMapScene extends Phaser.Scene {
     }
 
     create () {
+        this.actors = this.add.group();
+        this.staticProps = this.add.group();
+
         this.setupMap();
+
+        this.setupStaticProps();
 
         this.setupActors();
     }
@@ -58,8 +65,6 @@ export default class WorldMapScene extends Phaser.Scene {
     }
 
     setupActors () {
-        this.actors = this.add.group();
-
         let player = new Player(this);
         player.setX(player.width / 2);
         player.setY(this.tilemap.heightInPixels - 250);
@@ -69,11 +74,20 @@ export default class WorldMapScene extends Phaser.Scene {
         this.actors.add(player);
     }
 
+    setupStaticProps () {
+        let cauldron = new Cauldron(this);
+        cauldron.setX(100);
+        cauldron.setY(this.tilemap.heightInPixels - 160);
+
+        this.staticProps.add(cauldron);
+    }
+
     // provides an interface for actors and props to setup colliders
     addColliders (thing) {
         let callback = thing.triggerCollisionHandlers ? (object1, object2) => { thing.triggerCollisionHandlers(object1, object2); } : () => {};
 
         if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
         if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
+        if (!thing._staticPropsCollider) thing._staticPropsCollider = this.physics.add.collider(thing, this.staticProps, callback);
     }
 };

@@ -1,9 +1,9 @@
-import Prop from '../../props/prop';
+import PropDynamic from '../../props/prop-dynamic';
 
 export default (superclass) => class Thrower extends superclass {
 
     throw (prop, origin, target) {
-        if (!(prop instanceof Prop)) throw `${prop} is not a Prop`;
+        if (!(prop instanceof PropDynamic)) throw `${prop} is not a dynamic prop`;
 
         let angleToTarget = Phaser.Math.Angle.BetweenPoints(origin, target);
 

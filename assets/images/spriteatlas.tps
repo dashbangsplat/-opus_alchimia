@@ -181,6 +181,19 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">src/cauldron.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,9,32,18</rect>
+                <key>scale9Paddings</key>
+                <rect>16,9,32,18</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">src/mage_f_down_stand.png</key>
             <key type="filename">src/mage_f_down_walk_1.png</key>
             <key type="filename">src/mage_f_down_walk_2.png</key>
@@ -276,6 +289,7 @@
             <filename>src/potion_square_white_s.png</filename>
             <filename>src/potion_square_white_xl.png</filename>
             <filename>src/potion_square_white_xs.png</filename>
+            <filename>src/cauldron.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

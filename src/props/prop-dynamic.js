@@ -5,7 +5,7 @@ import Attributes from '../generics/attributes';
 import Gravity from './prop-attribute/gravity';
 import Active from './prop-attribute/active';
 
-export default class Prop extends
+export default class PropDynamic extends
     Collider ( Throwable ( 
         Phaser.Physics.Arcade.Sprite 
     ) ) {
@@ -14,7 +14,7 @@ export default class Prop extends
 
         // setup physics body for this actor
         this.scene.add.existing(this);
-        this.scene.physics.add.existing(this);
+        this.scene.physics.add.existing(this, false);
 
         // actors collide with world bounds
         this.setCollideWorldBounds(true);

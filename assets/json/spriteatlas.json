@@ -262,6 +262,27 @@
 					}
 				},
 				{
+					"filename": "cauldron",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 36
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 36
+					},
+					"frame": {
+						"x": 192,
+						"y": 212,
+						"w": 64,
+						"h": 36
+					}
+				},
+				{
 					"filename": "potion_circle_white_l",
 					"rotated": false,
 					"trimmed": false,
@@ -477,6 +498,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:58a2d842eb3e63053124bd29df217864:2c667ea5201f9b4a8fdc25bde21efc65:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:ce96154d6682fb92bea0ad1d961d0673:5ef16197e5f92a78a648b24c44b3301a:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }

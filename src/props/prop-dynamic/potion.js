@@ -1,8 +1,8 @@
 import propConfig from '../../config/prop';
 
-import Prop from '../prop';
+import PropDynamic from '../prop-dynamic';
 
-export default class Potion extends Prop {
+export default class Potion extends PropDynamic {
     constructor (scene, x = 0, y = 0) {
         super(scene, x, y, propConfig.xlCirclePotion.key, propConfig.xlCirclePotion.frame);
 

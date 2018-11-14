@@ -6,7 +6,7 @@ import Standing from './player-movement-state/standing';
 
 import Idle from './player-action-state/idle';
 
-import Potion from '../../props/prop/potion';
+import Potion from '../../props/prop-dynamic/potion';
 
 export default class Player extends Actor {
     constructor (scene, x = 0, y = 0) {

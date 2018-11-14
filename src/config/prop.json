@@ -1,4 +1,8 @@
 {
+    "cauldron": {
+        "key": "sprite-atlas",
+        "frame": "cauldron"
+    },
     "xlCirclePotion": {
         "key": "sprite-atlas",
         "frame": "potion_circle_white_xl",
