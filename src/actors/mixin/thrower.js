@@ -1,4 +1,4 @@
-import PropDynamic from '../../props/prop-dynamic';
+import PropDynamic from '../../props/prop';
 
 export default (superclass) => class Thrower extends superclass {
 

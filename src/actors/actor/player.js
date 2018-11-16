@@ -6,7 +6,7 @@ import Standing from './player-movement-state/standing';
 
 import Idle from './player-action-state/idle';
 
-import Potion from '../../props/prop-dynamic/potion';
+import Potion from '../../props/prop/potion';
 
 export default class Player extends Actor {
     constructor (scene, x = 0, y = 0) {
@@ -39,6 +39,14 @@ export default class Player extends Actor {
 
         // start our player action as idle, other states will be added as needed
         this.action.start(Idle, { "player": this });
+
+        /*this.registerCollisionHandler('debug', (object1, object2) => {
+            let other = object1 === this ? object2 : object1;
+    
+            if (other.constructor.name === 'Tile') return;
+    
+            console.log(other);
+        });*/
     }
 
     setMovementStanding () {

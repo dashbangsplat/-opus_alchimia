@@ -31,11 +31,6 @@ export default class Actor extends
         // actors collide with world bounds
         this.setCollideWorldBounds(true);
 
-        // setup colliders with everything else applicable in the scene
-        if (this.scene.addColliders) {
-            this.scene.addColliders(this);
-        }
-
         // attributes
         this._attributes = new Attributes();
         this._attributes.addAttribute(new Bounce(this));

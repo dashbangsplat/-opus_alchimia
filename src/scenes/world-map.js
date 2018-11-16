@@ -1,9 +1,7 @@
 import gameConfig from '../config/game';
 
 import Player from '../actors/actor/player';
-import Cauldron from '../props/prop-static/cauldron';
-
-import PropStatic from '../props/prop-static';
+import Cauldron from '../props/prop/cauldron';
 
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
@@ -26,13 +24,18 @@ export default class WorldMapScene extends Phaser.Scene {
 
     create () {
         this.actors = this.add.group();
-        this.staticProps = this.add.group();
+        this.props = this.add.group();
 
         this.setupMap();
 
-        this.setupStaticProps();
+        this.setupProps();
 
         this.setupActors();
+
+        this.actors.getChildren().forEach(child => this.addColliders(child));
+        this.props.getChildren().forEach(child => this.addColliders(child));
+
+        //console.log(this);
     }
 
     update () {
@@ -71,15 +74,16 @@ export default class WorldMapScene extends Phaser.Scene {
 
         this.cameras.main.startFollow(player, true);
 
+        this.player = player;
         this.actors.add(player);
     }
 
-    setupStaticProps () {
+    setupProps () {
         let cauldron = new Cauldron(this);
         cauldron.setX(100);
         cauldron.setY(this.tilemap.heightInPixels - 160);
 
-        this.staticProps.add(cauldron);
+        this.props.add(cauldron);
     }
 
     // provides an interface for actors and props to setup colliders
@@ -88,6 +92,6 @@ export default class WorldMapScene extends Phaser.Scene {
 
         if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
         if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
-        if (!thing._staticPropsCollider) thing._staticPropsCollider = this.physics.add.collider(thing, this.staticProps, callback);
+        if (!thing._propsCollider) thing._propsCollider = this.physics.add.collider(thing, this.props, callback);
     }
 };
