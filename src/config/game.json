@@ -39,5 +39,9 @@
         "key": "sprite-atlas",
         "json": "spriteatlas.json",
         "file": "spriteatlas.png"
+    },
+    "cauldronUI": {
+        "key": "sprite-atlas",
+        "frame": "cauldron_ui"
     }
 }

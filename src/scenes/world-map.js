@@ -20,6 +20,7 @@ export default class WorldMapScene extends Phaser.Scene {
         this.inputKeys.altRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.inputKeys.altDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.inputKeys.jump = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.inputKeys.use = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
     }
 
     create () {
@@ -93,5 +94,10 @@ export default class WorldMapScene extends Phaser.Scene {
         if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
         if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
         if (!thing._propsCollider) thing._propsCollider = this.physics.add.collider(thing, this.props, callback);
+    }
+
+    startCauldronUI() {
+        this.scene.pause();
+        this.scene.launch('CauldronUI');
     }
 };

@@ -8,11 +8,19 @@ export default class Standing extends State {
     init (data) {
         // set player using destructuring
         let { player } = data;
+
+        // set right, altRight, left, altLeft and jump using destructuring
+        let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } } } = player;
+
+        // reset player movement input states
+        right.isDown = altRight.isDown = left.isDown = altLeft.isDown = jump.isDown = false;
        
         let facing = player.isWalkingLeft() ? 'left' : player.isWalkingRight() ? 'right' : ''; 
         this.setStandingAnimation(player, facing); 
 
         player.stopWalking();
+
+
 
         return super.init(data);
     }
