@@ -4,8 +4,8 @@
 			"image": "spriteatlas.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 800,
-				"h": 800
+				"w": 563,
+				"h": 563
 			},
 			"scale": 1,
 			"frames": [
@@ -14,20 +14,20 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 800,
-						"h": 600
+						"w": 499,
+						"h": 435
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 800,
-						"h": 600
+						"w": 499,
+						"h": 435
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"w": 800,
-						"h": 600
+						"w": 499,
+						"h": 435
 					}
 				},
 				{
@@ -45,8 +45,8 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 0,
-						"y": 600,
+						"x": 499,
+						"y": 0,
 						"w": 64,
 						"h": 72
 					}
@@ -66,10 +66,241 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 0,
-						"y": 672,
+						"x": 499,
+						"y": 72,
 						"w": 64,
 						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_down_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 144,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 216,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 288,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 360,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 432,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 0,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 64,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 128,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 192,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 68
+					},
+					"frame": {
+						"x": 256,
+						"y": 435,
+						"w": 64,
+						"h": 68
+					}
+				},
+				{
+					"filename": "cauldron_slot",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 256,
+						"y": 503,
+						"w": 50,
+						"h": 50
 					}
 				},
 				{
@@ -88,7 +319,7 @@
 					},
 					"frame": {
 						"x": 0,
-						"y": 744,
+						"y": 507,
 						"w": 64,
 						"h": 36
 					}
@@ -109,7 +340,7 @@
 					},
 					"frame": {
 						"x": 0,
-						"y": 780,
+						"y": 543,
 						"w": 16,
 						"h": 16
 					}
@@ -130,7 +361,7 @@
 					},
 					"frame": {
 						"x": 16,
-						"y": 780,
+						"y": 543,
 						"w": 16,
 						"h": 16
 					}
@@ -151,7 +382,7 @@
 					},
 					"frame": {
 						"x": 32,
-						"y": 780,
+						"y": 543,
 						"w": 16,
 						"h": 16
 					}
@@ -172,51 +403,9 @@
 					},
 					"frame": {
 						"x": 48,
-						"y": 780,
+						"y": 543,
 						"w": 16,
 						"h": 16
-					}
-				},
-				{
-					"filename": "mage_f_down_walk_2",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 64,
-						"y": 600,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_left_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 64,
-						"y": 672,
-						"w": 64,
-						"h": 72
 					}
 				},
 				{
@@ -235,7 +424,7 @@
 					},
 					"frame": {
 						"x": 64,
-						"y": 744,
+						"y": 507,
 						"w": 16,
 						"h": 16
 					}
@@ -256,7 +445,7 @@
 					},
 					"frame": {
 						"x": 64,
-						"y": 760,
+						"y": 523,
 						"w": 16,
 						"h": 16
 					}
@@ -277,7 +466,7 @@
 					},
 					"frame": {
 						"x": 64,
-						"y": 776,
+						"y": 539,
 						"w": 16,
 						"h": 16
 					}
@@ -298,7 +487,7 @@
 					},
 					"frame": {
 						"x": 80,
-						"y": 744,
+						"y": 507,
 						"w": 16,
 						"h": 16
 					}
@@ -319,7 +508,7 @@
 					},
 					"frame": {
 						"x": 80,
-						"y": 760,
+						"y": 523,
 						"w": 16,
 						"h": 16
 					}
@@ -340,177 +529,9 @@
 					},
 					"frame": {
 						"x": 80,
-						"y": 776,
+						"y": 539,
 						"w": 16,
 						"h": 16
-					}
-				},
-				{
-					"filename": "mage_f_left_walk_1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 128,
-						"y": 600,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_left_walk_2",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 128,
-						"y": 672,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 192,
-						"y": 600,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_walk_1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 192,
-						"y": 672,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_walk_2",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 256,
-						"y": 600,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_up_walk_1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 256,
-						"y": 672,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_up_walk_2",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 320,
-						"y": 600,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_up_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 68
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 68
-					},
-					"frame": {
-						"x": 320,
-						"y": 672,
-						"w": 64,
-						"h": 68
 					}
 				}
 			]
@@ -519,6 +540,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:4d47c767f04146a73fec7e54c86de4e9:433177ca42b14f849a236d010e3cab07:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:6bc379f87e784772a5af51e470c8528f:d10128b7b048109ed44e0ae1f33256e0:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }

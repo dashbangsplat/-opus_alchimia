@@ -1,4 +1,6 @@
-import gameConfig from '../config/game';
+import uiConfig from '../config/ui';
+
+import CauldronSlot from '../ui/cauldron-slot';
 
 export default class CauldronUIScene extends Phaser.Scene {
     constructor (config, key = 'CauldronUI') {
@@ -21,7 +23,18 @@ export default class CauldronUIScene extends Phaser.Scene {
 
         this.add.rectangle(width / 2, height / 2, width, height, 0x000000);
 
-        this.add.image(width / 2, height / 2, gameConfig.cauldronUI.key, gameConfig.cauldronUI.frame);
+        let cauldron = this.add.image(uiConfig.cauldron.width / 2, height - uiConfig.cauldron.height / 2 + 2, uiConfig.cauldron.key, uiConfig.cauldron.frame);
+
+        let cauldronSlots = [];
+        for (let i = 0; i < uiConfig.cauldron.maxSlots; i++) {
+            let cauldronSlot = new CauldronSlot(
+                this, 
+                cauldron.x - (cauldron.width * cauldron.originX) + uiConfig.cauldron.slotStartX + uiConfig.cauldronSlot.width / 2 + i * (uiConfig.cauldronSlot.width + uiConfig.cauldron.slotSpacing), 
+                cauldron.y - (cauldron.height * cauldron.originY) + uiConfig.cauldron.slotStartY + uiConfig.cauldronSlot.height / 2
+            );
+            this.add.existing(cauldronSlot);
+            cauldronSlots.push(cauldronSlot);
+        }
     }
 
     update () {

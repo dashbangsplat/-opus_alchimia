@@ -1,0 +1,18 @@
+{
+    "cauldronSlot": {
+        "key": "sprite-atlas",
+        "frame": "cauldron_slot",
+        "width": 50,
+        "height": 50
+    }, 
+    "cauldron": {
+        "key": "sprite-atlas",
+        "frame": "cauldron_ui",
+        "width": 499,
+        "height": 435,
+        "maxSlots": 4,
+        "slotStartX": 140,
+        "slotStartY": 55,
+        "slotSpacing": 10
+    }
+}
