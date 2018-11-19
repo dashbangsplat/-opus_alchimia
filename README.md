@@ -32,3 +32,4 @@ Supports:
 https://www.kenney.nl/assets/platformer-art-pixel-redux
 https://opengameart.org/content/antifareas-rpg-sprite-set-1-enlarged-w-transparent-background-fixed
 https://opengameart.org/content/rpg-potions-16x16
+https://opengameart.org/content/95-game-icons

@@ -268,6 +268,19 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">src/magic_essence.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">src/potion_circle_white_l.png</key>
             <key type="filename">src/potion_circle_white_m.png</key>
             <key type="filename">src/potion_circle_white_s.png</key>
@@ -318,6 +331,7 @@
             <filename>src/cauldron.png</filename>
             <filename>src/cauldron_ui.png</filename>
             <filename>src/cauldron_slot.png</filename>
+            <filename>src/magic_essence.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

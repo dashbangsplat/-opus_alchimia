@@ -13,7 +13,7 @@ import WorldMapScene from './scenes/world-map';
 import CauldronUIScene from './scenes/cauldron-ui';
 
 var phaserGameConfig = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: gameConfig.screen.width,
     height: gameConfig.screen.height,
     backgroundColor: '#000000',

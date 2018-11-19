@@ -178,6 +178,300 @@
 					}
 				},
 				{
+					"filename": "cauldron_slot",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 0,
+						"y": 504,
+						"w": 50,
+						"h": 50
+					}
+				},
+				{
+					"filename": "mage_f_up_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 68
+					},
+					"frame": {
+						"x": 0,
+						"y": 435,
+						"w": 64,
+						"h": 68
+					}
+				},
+				{
+					"filename": "cauldron",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 36
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 36
+					},
+					"frame": {
+						"x": 50,
+						"y": 504,
+						"w": 64,
+						"h": 36
+					}
+				},
+				{
+					"filename": "potion_circle_white_l",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 50,
+						"y": 540,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_m",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 66,
+						"y": 540,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_s",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 82,
+						"y": 540,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_xl",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 98,
+						"y": 540,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "magic_essence",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 114,
+						"y": 504,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "potion_circle_white_xs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 114,
+						"y": 536,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_l",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 130,
+						"y": 536,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_m",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 146,
+						"y": 504,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_s",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 146,
+						"y": 520,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_xl",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 146,
+						"y": 536,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_square_white_xs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 162,
+						"y": 504,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
 					"filename": "mage_f_right_walk_1",
 					"rotated": false,
 					"trimmed": false,
@@ -192,7 +486,7 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 0,
+						"x": 178,
 						"y": 435,
 						"w": 64,
 						"h": 72
@@ -213,7 +507,7 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 64,
+						"x": 242,
 						"y": 435,
 						"w": 64,
 						"h": 72
@@ -234,7 +528,7 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 128,
+						"x": 306,
 						"y": 435,
 						"w": 64,
 						"h": 72
@@ -255,283 +549,10 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 192,
+						"x": 370,
 						"y": 435,
 						"w": 64,
 						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_up_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 68
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 68
-					},
-					"frame": {
-						"x": 256,
-						"y": 435,
-						"w": 64,
-						"h": 68
-					}
-				},
-				{
-					"filename": "cauldron_slot",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 50,
-						"h": 50
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 50,
-						"h": 50
-					},
-					"frame": {
-						"x": 256,
-						"y": 503,
-						"w": 50,
-						"h": 50
-					}
-				},
-				{
-					"filename": "cauldron",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 36
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 36
-					},
-					"frame": {
-						"x": 0,
-						"y": 507,
-						"w": 64,
-						"h": 36
-					}
-				},
-				{
-					"filename": "potion_circle_white_l",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 0,
-						"y": 543,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_m",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 16,
-						"y": 543,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_s",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 32,
-						"y": 543,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_xl",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 48,
-						"y": 543,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_xs",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 64,
-						"y": 507,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_square_white_l",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 64,
-						"y": 523,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_square_white_m",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 64,
-						"y": 539,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_square_white_s",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 80,
-						"y": 507,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_square_white_xl",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 80,
-						"y": 523,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_square_white_xs",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 80,
-						"y": 539,
-						"w": 16,
-						"h": 16
 					}
 				}
 			]
@@ -540,6 +561,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:6bc379f87e784772a5af51e470c8528f:d10128b7b048109ed44e0ae1f33256e0:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:076346b2f451836813a865ca6d2ec923:179a9f608e80df79f8254b4129f72afd:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }

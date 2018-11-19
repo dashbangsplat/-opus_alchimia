@@ -35,6 +35,7 @@ export default class CauldronUIScene extends Phaser.Scene {
             this.add.existing(cauldronSlot);
             cauldronSlots.push(cauldronSlot);
         }
+        console.log(cauldronSlots);
     }
 
     update () {

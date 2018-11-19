@@ -3,6 +3,8 @@ import gameConfig from '../config/game';
 import Player from '../actors/actor/player';
 import Cauldron from '../props/prop/cauldron';
 
+import MagicEssence from '../props/prop/essence';
+
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
         super({ key: key });
@@ -33,8 +35,12 @@ export default class WorldMapScene extends Phaser.Scene {
 
         this.setupActors();
 
+        let me = new MagicEssence(this, this.player.x + 100, this.player.y);
+        this.addOverlapping(me);
+        me.addCollectionTarget(this.player);
+
         this.actors.getChildren().forEach(child => this.addColliders(child));
-        this.props.getChildren().forEach(child => this.addColliders(child));
+        this.props.getChildren().forEach(child => this.addOverlapping(child));
 
         //console.log(this);
     }
@@ -93,7 +99,16 @@ export default class WorldMapScene extends Phaser.Scene {
 
         if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
         if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
-        if (!thing._propsCollider) thing._propsCollider = this.physics.add.collider(thing, this.props, callback);
+        if (!thing._propsCollider) thing._propsCollider = this.physics.add.overlap(thing, this.props, callback);
+    }
+
+    // provides an interface for props to setup overlapping
+    addOverlapping (thing) {
+        let callback = thing.triggerCollisionHandlers ? (object1, object2) => { thing.triggerCollisionHandlers(object1, object2); } : () => {};
+
+        if (!thing._tileCollider) thing._tileCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
+        if (!thing._actorsCollider) thing._actorsCollider = this.physics.add.overlap(thing, this.actors, callback);
+        if (!thing._propsCollider) thing._propsCollider = this.physics.add.overlap(thing, this.props, callback);
     }
 
     startCauldronUI() {
