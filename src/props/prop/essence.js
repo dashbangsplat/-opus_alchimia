@@ -13,5 +13,9 @@ export default class Essence extends Collectable ( Prop ) {
 
         // setup attributes
         this.attributes.gravity.value = this.config.attributes.gravity;
+
+        this._tintShiftSeconds = 200;
+        this._tintShiftTime = 0;
+        this.setTint(0xffffff, 0xffffff, 0xffffff, 0xffffff);
     }
 }

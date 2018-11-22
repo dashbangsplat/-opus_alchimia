@@ -1,11 +1,65 @@
 {
+    "airEssence": {
+        "key": "sprite-atlas",
+        "frame": "air_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
     "cauldron": {
         "key": "sprite-atlas",
         "frame": "cauldron"
     },
+    "darkEssence": {
+        "key": "sprite-atlas",
+        "frame": "dark_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
+    "earthEssence": {
+        "key": "sprite-atlas",
+        "frame": "earth_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
+    "fireEssence": {
+        "key": "sprite-atlas",
+        "frame": "fire_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
+    "lightEssence": {
+        "key": "sprite-atlas",
+        "frame": "light_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
     "magicEssence": {
         "key": "sprite-atlas",
         "frame": "magic_essence",
+        "width": 32,
+        "height": 32,
+        "attributes": {
+            "gravity": 70
+        }
+    },
+    "waterEssence": {
+        "key": "sprite-atlas",
+        "frame": "water_essence",
         "width": 32,
         "height": 32,
         "attributes": {

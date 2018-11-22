@@ -3,7 +3,13 @@ import gameConfig from '../config/game';
 import Player from '../actors/actor/player';
 import Cauldron from '../props/prop/cauldron';
 
-import MagicEssence from '../props/prop/essence';
+import AirEssence from '../props/prop/essence/air';
+import DarkEssence from '../props/prop/essence/dark';
+import EarthEssence from '../props/prop/essence/earth';
+import FireEssence from '../props/prop/essence/fire';
+import LightEssence from '../props/prop/essence/light';
+import MagicEssence from '../props/prop/essence/magic';
+import WaterEssence from '../props/prop/essence/water';
 
 export default class WorldMapScene extends Phaser.Scene {
     constructor (config, key = 'WorldMap') {
@@ -35,9 +41,15 @@ export default class WorldMapScene extends Phaser.Scene {
 
         this.setupActors();
 
-        let me = new MagicEssence(this, this.player.x + 100, this.player.y);
-        this.addOverlapping(me);
-        me.addCollectionTarget(this.player);
+        let essenceX = this.player.x;
+        [AirEssence, DarkEssence, EarthEssence, FireEssence, LightEssence, MagicEssence, WaterEssence].forEach( Essence => {
+            essenceX += 100;
+            let essence = new Essence(this, essenceX, this.player.y);
+            console.log(essence);
+            this.addOverlapping(essence);
+            essence.addCollectionTarget(this.player);
+
+        });
 
         this.actors.getChildren().forEach(child => this.addColliders(child));
         this.props.getChildren().forEach(child => this.addOverlapping(child));
@@ -50,6 +62,11 @@ export default class WorldMapScene extends Phaser.Scene {
 
     setupMap () {
         this.tilemap = this.make.tilemap({ key: gameConfig.worldMap.key });
+
+        // sky
+        let { widthInPixels: width, heightInPixels: height } = this.tilemap;
+        this.sky = this.add.rectangle(width / 2, height / 2, width, height, 0xddddff);
+        this.sky.setDepth(-10);
 
         this.tilesets = {};
         gameConfig.worldMap.tilesets.forEach(tileset => {
@@ -70,8 +87,8 @@ export default class WorldMapScene extends Phaser.Scene {
         this.tileLayers.foreground.setDepth(1);
 
         // resize world to match the tilemap
-        this.physics.world.setBounds(0, 0, this.tilemap.widthInPixels, this.tilemap.heightInPixels);
-        this.cameras.main.setBounds(0, 0, this.tilemap.widthInPixels, this.tilemap.heightInPixels);
+        this.physics.world.setBounds(0, 0, width, height);
+        this.cameras.main.setBounds(0, 0, width, height);
     }
 
     setupActors () {
