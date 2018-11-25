@@ -59,6 +59,24 @@
                  "width":16,
                  "x":76,
                  "y":1435
+                }, 
+                {
+                 "gid":337,
+                 "height":16,
+                 "id":6,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":"MasterAlchemist"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1075,
+                 "y":1436
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -147,7 +165,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":6,
+ "nextobjectid":7,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.0",

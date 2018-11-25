@@ -251,6 +251,18 @@
             <key type="filename">src/mage_f_right_stand.png</key>
             <key type="filename">src/mage_f_right_walk_1.png</key>
             <key type="filename">src/mage_f_right_walk_2.png</key>
+            <key type="filename">src/townsfolk_m_down_stand.png</key>
+            <key type="filename">src/townsfolk_m_down_walk_1.png</key>
+            <key type="filename">src/townsfolk_m_down_walk_2.png</key>
+            <key type="filename">src/townsfolk_m_left_stand.png</key>
+            <key type="filename">src/townsfolk_m_left_walk_1.png</key>
+            <key type="filename">src/townsfolk_m_left_walk_2.png</key>
+            <key type="filename">src/townsfolk_m_right_stand.png</key>
+            <key type="filename">src/townsfolk_m_right_walk_1.png</key>
+            <key type="filename">src/townsfolk_m_right_walk_2.png</key>
+            <key type="filename">src/townsfolk_m_up_stand.png</key>
+            <key type="filename">src/townsfolk_m_up_walk_1.png</key>
+            <key type="filename">src/townsfolk_m_up_walk_2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -364,6 +376,18 @@
             <filename>src/actor_icon.png</filename>
             <filename>src/prop_icon.png</filename>
             <filename>src/trigger_icon.png</filename>
+            <filename>src/townsfolk_m_down_stand.png</filename>
+            <filename>src/townsfolk_m_down_walk_1.png</filename>
+            <filename>src/townsfolk_m_down_walk_2.png</filename>
+            <filename>src/townsfolk_m_left_stand.png</filename>
+            <filename>src/townsfolk_m_left_walk_1.png</filename>
+            <filename>src/townsfolk_m_left_walk_2.png</filename>
+            <filename>src/townsfolk_m_right_stand.png</filename>
+            <filename>src/townsfolk_m_right_walk_1.png</filename>
+            <filename>src/townsfolk_m_right_walk_2.png</filename>
+            <filename>src/townsfolk_m_up_stand.png</filename>
+            <filename>src/townsfolk_m_up_walk_1.png</filename>
+            <filename>src/townsfolk_m_up_walk_2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -23,7 +23,7 @@ export default (superclass) => class Collider extends superclass {
     collisionSettings () {
         return {
             map: true,
-            actors: true,
+            actors: false,
             props: false
         };
     }
@@ -51,7 +51,7 @@ export default (superclass) => class Collider extends superclass {
     overlapSettings () {
         return {
             map: false,
-            actors: false,
+            actors: true,
             props: true
         };
     }

@@ -1,4 +1,5 @@
 import Player from '../actors/actor/player';
+import MasterAlchemist from '../actors/actor/master-alchemist';
 
 import Cauldron from '../props/prop/cauldron';
 import AirEssence from '../props/prop/essence/air';
@@ -225,7 +226,8 @@ export default class Stage extends Phaser.Scene {
 
     getActorClass(className) {
         return {
-            "Player": Player
+            "Player": Player,
+            "MasterAlchemist": MasterAlchemist
         }[className];
     }
 

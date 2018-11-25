@@ -4,8 +4,8 @@
 			"image": "spriteatlas.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 563,
-				"h": 563
+				"w": 613,
+				"h": 613
 			},
 			"scale": 1,
 			"frames": [
@@ -45,8 +45,8 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 499,
-						"y": 0,
+						"x": 0,
+						"y": 435,
 						"w": 64,
 						"h": 72
 					}
@@ -67,9 +67,30 @@
 					},
 					"frame": {
 						"x": 499,
-						"y": 72,
+						"y": 0,
 						"w": 64,
 						"h": 72
+					}
+				},
+				{
+					"filename": "cauldron_slot",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 563,
+						"y": 0,
+						"w": 50,
+						"h": 50
 					}
 				},
 				{
@@ -87,119 +108,14 @@
 						"h": 72
 					},
 					"frame": {
-						"x": 499,
-						"y": 144,
+						"x": 0,
+						"y": 507,
 						"w": 64,
 						"h": 72
 					}
 				},
 				{
 					"filename": "mage_f_left_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 499,
-						"y": 216,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_left_walk_1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 499,
-						"y": 288,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_left_walk_2",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 499,
-						"y": 360,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_stand",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 499,
-						"y": 432,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_walk_1",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 72
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 72
-					},
-					"frame": {
-						"x": 0,
-						"y": 435,
-						"w": 64,
-						"h": 72
-					}
-				},
-				{
-					"filename": "mage_f_right_walk_2",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -220,7 +136,49 @@
 					}
 				},
 				{
-					"filename": "mage_f_up_walk_1",
+					"filename": "mage_f_left_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 72,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_left_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 64,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_stand",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -241,7 +199,49 @@
 					}
 				},
 				{
-					"filename": "mage_f_up_walk_2",
+					"filename": "mage_f_right_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 144,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_right_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 128,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "mage_f_up_walk_1",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -262,6 +262,279 @@
 					}
 				},
 				{
+					"filename": "mage_f_up_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 216,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_down_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 192,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_down_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 256,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_down_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 288,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_left_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 256,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_left_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 320,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_left_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 499,
+						"y": 360,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_right_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 320,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_right_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 384,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_right_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 384,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_up_stand",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 448,
+						"y": 435,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_up_walk_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 448,
+						"y": 507,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
+					"filename": "townsfolk_m_up_walk_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 72
+					},
+					"frame": {
+						"x": 512,
+						"y": 432,
+						"w": 64,
+						"h": 72
+					}
+				},
+				{
 					"filename": "mage_f_up_stand",
 					"rotated": false,
 					"trimmed": false,
@@ -276,8 +549,8 @@
 						"h": 68
 					},
 					"frame": {
-						"x": 256,
-						"y": 435,
+						"x": 512,
+						"y": 504,
 						"w": 64,
 						"h": 68
 					}
@@ -297,31 +570,10 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 320,
-						"y": 435,
+						"x": 512,
+						"y": 572,
 						"w": 64,
 						"h": 36
-					}
-				},
-				{
-					"filename": "cauldron_slot",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 50,
-						"h": 50
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 50,
-						"h": 50
-					},
-					"frame": {
-						"x": 384,
-						"y": 435,
-						"w": 50,
-						"h": 50
 					}
 				},
 				{
@@ -339,8 +591,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 320,
-						"y": 471,
+						"x": 563,
+						"y": 50,
 						"w": 32,
 						"h": 32
 					}
@@ -360,8 +612,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 352,
-						"y": 471,
+						"x": 0,
+						"y": 579,
 						"w": 32,
 						"h": 32
 					}
@@ -381,8 +633,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 384,
-						"y": 485,
+						"x": 563,
+						"y": 82,
 						"w": 32,
 						"h": 32
 					}
@@ -402,8 +654,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 416,
-						"y": 485,
+						"x": 32,
+						"y": 579,
 						"w": 32,
 						"h": 32
 					}
@@ -423,31 +675,10 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 434,
-						"y": 435,
+						"x": 563,
+						"y": 114,
 						"w": 32,
 						"h": 32
-					}
-				},
-				{
-					"filename": "potion_circle_white_l",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 434,
-						"y": 467,
-						"w": 16,
-						"h": 16
 					}
 				},
 				{
@@ -465,8 +696,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 448,
-						"y": 483,
+						"x": 64,
+						"y": 579,
 						"w": 32,
 						"h": 32
 					}
@@ -486,52 +717,10 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 466,
-						"y": 435,
+						"x": 563,
+						"y": 146,
 						"w": 32,
 						"h": 32
-					}
-				},
-				{
-					"filename": "potion_circle_white_m",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 450,
-						"y": 467,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_s",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 466,
-						"y": 467,
-						"w": 16,
-						"h": 16
 					}
 				},
 				{
@@ -549,52 +738,10 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 480,
-						"y": 504,
+						"x": 96,
+						"y": 579,
 						"w": 32,
 						"h": 32
-					}
-				},
-				{
-					"filename": "potion_circle_white_xl",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 480,
-						"y": 483,
-						"w": 16,
-						"h": 16
-					}
-				},
-				{
-					"filename": "potion_circle_white_xs",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 16,
-						"h": 16
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 16,
-						"h": 16
-					},
-					"frame": {
-						"x": 482,
-						"y": 467,
-						"w": 16,
-						"h": 16
 					}
 				},
 				{
@@ -612,8 +759,8 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 448,
-						"y": 515,
+						"x": 563,
+						"y": 178,
 						"w": 32,
 						"h": 32
 					}
@@ -633,10 +780,136 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 512,
-						"y": 504,
+						"x": 128,
+						"y": 579,
 						"w": 32,
 						"h": 32
+					}
+				},
+				{
+					"filename": "player_icon",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 32
+					},
+					"frame": {
+						"x": 563,
+						"y": 210,
+						"w": 26,
+						"h": 32
+					}
+				},
+				{
+					"filename": "potion_circle_white_l",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 595,
+						"y": 50,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_m",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 160,
+						"y": 579,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_s",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 563,
+						"y": 242,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_xl",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 595,
+						"y": 66,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "potion_circle_white_xs",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 160,
+						"y": 595,
+						"w": 16,
+						"h": 16
 					}
 				},
 				{
@@ -654,8 +927,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 544,
-						"y": 504,
+						"x": 176,
+						"y": 579,
 						"w": 16,
 						"h": 16
 					}
@@ -675,8 +948,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 544,
-						"y": 520,
+						"x": 563,
+						"y": 258,
 						"w": 16,
 						"h": 16
 					}
@@ -696,8 +969,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 480,
-						"y": 536,
+						"x": 595,
+						"y": 82,
 						"w": 16,
 						"h": 16
 					}
@@ -717,8 +990,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 496,
-						"y": 536,
+						"x": 176,
+						"y": 595,
 						"w": 16,
 						"h": 16
 					}
@@ -738,31 +1011,10 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 512,
-						"y": 536,
+						"x": 192,
+						"y": 579,
 						"w": 16,
 						"h": 16
-					}
-				},
-				{
-					"filename": "player_icon",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 26,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 26,
-						"h": 32
-					},
-					"frame": {
-						"x": 256,
-						"y": 503,
-						"w": 26,
-						"h": 32
 					}
 				}
 			]
@@ -771,6 +1023,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:81773a1f4f0840642e359ec9cde0388c:2f8387f97aebd3f748997653ed6cb816:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:04dc71f47089dd899e24b9f077e9714a:3b005cd8a7ab4ab391c4d8306478cfd1:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }
