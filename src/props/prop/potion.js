@@ -20,6 +20,14 @@ export default class Potion extends Prop {
         });*/
     }
 
+    collisionSettings () {
+        return {
+            map: true,
+            actors: true,
+            props: true 
+        };
+    }
+
     // will only be invoked if added to gameobject (not just physics object)
     preUpdate (time, delta) {
         // TOOD add movement updates

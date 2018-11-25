@@ -16,8 +16,9 @@ export default class ThrowingPotion extends State {
         // no potion available to throw from potion pool
         if (!potion) return new ChangeState(Idle, { "player": player });
 
-        // add colliders for the potion
+        // since we are dynamically generated... add colliders/overlapping for the potion
         player.scene.addColliders(potion);
+        player.scene.addOverlapping(potion);
 
         // face the direction of throwing
         if (!(player.movement.currentState instanceof Standing)) player.setMovementStanding();

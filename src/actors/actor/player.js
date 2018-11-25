@@ -41,16 +41,32 @@ export default class Player extends Actor {
         // start our player action as idle, other states will be added as needed
         this.action.start(Idle, { "player": this });
 
-        this.registerCollisionHandler('useCauldron', (object1, object2) => {
+        this.registerOverlapHandler('useCauldron', (object1, object2) => {
             let other = object1 === this ? object2 : object1;
     
-            if (other instanceof Cauldron && this.scene.inputKeys.use.isDown) {
+            if (this.canUseCauldron && other instanceof Cauldron && this.scene.inputKeys.use.isDown) {
                 this.scene.inputKeys.use.isDown = false; // reset the key so it isn't remembered
                 this.movement.setState(Standing, { "player": this }); // set our movement state to standing so we come back from the cauldron UI just standing
                 this.scene.startCauldronUI();
             }
         });
+
+        this.enableMovement();
+        this.enableActions();
+        this.enableUseCauldron();
     }
+
+    enableMovement () { this.canMove = true; }
+
+    disableMovement () { this.canMove = false; }
+
+    enableActions () { this.canAct = true; }
+
+    disableActions () { this.canAct = false; }
+
+    enableUseCauldron () { this.canUseCauldron = true; }
+
+    disableUseCauldron () { this.canUseCauldron = false; }
 
     setMovementStanding () {
         this.movement.setState(Standing, { "player": this });
@@ -58,9 +74,9 @@ export default class Player extends Actor {
 
     // will only be invoked if added to gameobject (not just physics object)
     preUpdate (time, delta) {
-        this.movement.update({ "player": this });
+        if (this.canMove) this.movement.update({ "player": this });
 
-        this.action.update({ "player": this });
+        if (this.canAct) this.action.update({ "player": this });
 
         if (super.preUpdate) super.preUpdate(time, delta);
     }

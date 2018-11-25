@@ -40,8 +40,55 @@
         {
          "draworder":"topdown",
          "id":5,
-         "name":"spawners",
-         "objects":[],
+         "name":"actors",
+         "objects":[
+                {
+                 "gid":309,
+                 "height":16,
+                 "id":1,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":"Player"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":76,
+                 "y":1435
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"props",
+         "objects":[
+                {
+                 "gid":310,
+                 "height":16,
+                 "id":4,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":"Cauldron"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":520,
+                 "y":1454
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -60,8 +107,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":1,
+ "nextlayerid":7,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.0",
@@ -70,11 +117,11 @@
         {
          "columns":28,
          "firstgid":1,
-         "image":"..\/images\/world_tileset.png",
+         "image":"..\/images\/game_tileset.png",
          "imageheight":800,
          "imagewidth":448,
          "margin":0,
-         "name":"world_tileset",
+         "name":"game_tileset",
          "spacing":0,
          "tilecount":1400,
          "tileheight":16,
@@ -275,6 +322,48 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }]
+                }, 
+                {
+                 "id":308,
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Actor"
+                        }]
+                }, 
+                {
+                 "id":309,
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Prop"
+                        }]
+                }, 
+                {
+                 "id":336,
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Actor"
                         }]
                 }],
          "tilewidth":16

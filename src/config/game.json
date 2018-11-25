@@ -3,34 +3,38 @@
         "width": 800,
         "height": 600
     },
-    "worldMap": {
-        "key": "world-map",
-        "file": "world.json",
-        "tilesets": [
-            {
-                "key": "world_tileset",
-                "file": "world_tileset.png"
+    "tutorial": {
+        "key": "tutorial",
+        "file": "tutorial.json",
+        "sky": {
+            "color": {
+                "red": 221,
+                "green": 221,
+                "blue": 255
             }
+        },
+        "tilesets": [
+            "game_tileset"
         ],
         "tileLayers": [
             {
                 "name": "scenery",
-                "tileset": "world_tileset",
+                "tileset": "game_tileset",
                 "depth": -2
             },
             {
                 "name": "background",
-                "tileset": "world_tileset",
+                "tileset": "game_tileset",
                 "depth": -1
             },
             {
                 "name": "middle",
-                "tileset": "world_tileset",
+                "tileset": "game_tileset",
                 "depth": 0
             },
             {
                 "name": "foreground",
-                "tileset": "world_tileset",
+                "tileset": "game_tileset",
                 "depth": 1
             }
         ]

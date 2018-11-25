@@ -8,8 +8,8 @@ import gameConfig from '../config/game.json';
 
 // require in other assets to be included but not added to cache at this time
 require('../../assets/icons/favicon.ico');
-require('../../assets/json/world.json');
-require('../../assets/images/world_tileset.png');
+require('../../assets/json/tutorial.json');
+require('../../assets/images/game_tileset.png');
 require('../../assets/json/spriteatlas.json');
 require('../../assets/images/spriteatlas.png');
 require('../../assets/images/play.png');
@@ -25,11 +25,13 @@ export default class LoadingScene extends Phaser.Scene {
     }
 
     preload () {
-        // load world tilemap and it's tilesets
-        gameConfig.worldMap.tilesets.forEach(tileset => {
-            this.load.image(tileset.key, tileset.file);
+        // load tileset to be used in tilemaps
+        this.load.image('game_tileset', 'game_tileset.png');
+
+        // load tilemap json for each tilemap
+        ['tutorial'].forEach(mapKey => {
+            this.load.tilemapTiledJSON(gameConfig[mapKey].key, gameConfig[mapKey].file);
         });
-        this.load.tilemapTiledJSON(gameConfig.worldMap.key, gameConfig.worldMap.file);
 
         // load sprite atlas
         this.load.atlas(gameConfig.spriteAtlas.key, gameConfig.spriteAtlas.file, gameConfig.spriteAtlas.json);

@@ -20,7 +20,7 @@ export default class MainMenuScene extends Phaser.Scene {
         playButton.setInteractive();
         playButton.on('pointerdown', () => {
             this.input.stopPropagation();
-            this.scene.start('WorldMap');
+            this.scene.start('Tutorial');
         });
     }
 };

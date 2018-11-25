@@ -11,7 +11,8 @@ export default class CauldronUIScene extends Phaser.Scene {
         // load all the resources required for this scene before using them
     }
 
-    init () {
+    init (data) {
+        this.lastScene = data.scene.sys.config.key;
         this.scene.bringToTop();
 
         this.inputKeys = {};
@@ -35,13 +36,12 @@ export default class CauldronUIScene extends Phaser.Scene {
             this.add.existing(cauldronSlot);
             cauldronSlots.push(cauldronSlot);
         }
-        console.log(cauldronSlots);
     }
 
     update () {
         if (this.inputKeys.exit.isDown) {
             this.inputKeys.exit.isDown = false; // reset the key so it isn't remembered
-            this.scene.resume('WorldMap');
+            this.scene.resume(this.lastScene);
             this.scene.sleep();
             return;
         }

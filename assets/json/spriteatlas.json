@@ -325,7 +325,7 @@
 					}
 				},
 				{
-					"filename": "air_essence",
+					"filename": "actor_icon",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -346,7 +346,7 @@
 					}
 				},
 				{
-					"filename": "dark_essence",
+					"filename": "air_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -367,7 +367,7 @@
 					}
 				},
 				{
-					"filename": "earth_essence",
+					"filename": "dark_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -388,7 +388,7 @@
 					}
 				},
 				{
-					"filename": "fire_essence",
+					"filename": "earth_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -409,7 +409,7 @@
 					}
 				},
 				{
-					"filename": "light_essence",
+					"filename": "fire_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -451,7 +451,7 @@
 					}
 				},
 				{
-					"filename": "magic_essence",
+					"filename": "light_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -472,7 +472,7 @@
 					}
 				},
 				{
-					"filename": "water_essence",
+					"filename": "magic_essence",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -535,6 +535,27 @@
 					}
 				},
 				{
+					"filename": "prop_icon",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 480,
+						"y": 504,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
 					"filename": "potion_circle_white_xl",
 					"rotated": false,
 					"trimmed": false,
@@ -577,6 +598,48 @@
 					}
 				},
 				{
+					"filename": "water_essence",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 448,
+						"y": 515,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_icon",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 32
+					},
+					"frame": {
+						"x": 512,
+						"y": 504,
+						"w": 26,
+						"h": 32
+					}
+				},
+				{
 					"filename": "potion_square_white_l",
 					"rotated": false,
 					"trimmed": false,
@@ -591,8 +654,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 480,
-						"y": 499,
+						"x": 538,
+						"y": 504,
 						"w": 16,
 						"h": 16
 					}
@@ -612,8 +675,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 496,
-						"y": 504,
+						"x": 538,
+						"y": 520,
 						"w": 16,
 						"h": 16
 					}
@@ -633,8 +696,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 448,
-						"y": 515,
+						"x": 480,
+						"y": 536,
 						"w": 16,
 						"h": 16
 					}
@@ -654,8 +717,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 464,
-						"y": 515,
+						"x": 496,
+						"y": 536,
 						"w": 16,
 						"h": 16
 					}
@@ -675,8 +738,8 @@
 						"h": 16
 					},
 					"frame": {
-						"x": 480,
-						"y": 515,
+						"x": 512,
+						"y": 536,
 						"w": 16,
 						"h": 16
 					}
@@ -687,6 +750,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:c5d5ff87affc0fe7f64395deecdc7637:084588e619a9d3b1863ae9ab54fcce61:1fd55e2fd82dd1a0f07657f786644695$"
+		"smartupdate": "$TexturePacker:SmartUpdate:fbae0ec4eca3d59158cbc1136d549367:e128b2a65e4ae0634c8fb1ba0a63db70:1fd55e2fd82dd1a0f07657f786644695$"
 	}
 }
