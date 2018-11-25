@@ -32,6 +32,8 @@ export default class PropInventoryItem {
 
     get type () { return this._type; }
 
+    get label () { return this._label; }
+
     generateIcon (scene, x, y) { 
         let icon = new Phaser.GameObjects.Image(scene, x, y);
         

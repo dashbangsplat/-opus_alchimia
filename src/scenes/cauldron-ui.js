@@ -31,7 +31,7 @@ export default class CauldronUIScene extends Phaser.Scene {
 
         let cauldron = this.add.image(uiConfig.cauldron.width / 2, height - uiConfig.cauldron.height / 2 + 2, uiConfig.cauldron.key, uiConfig.cauldron.frame);
 
-        let cauldronSlots = [];
+        this.cauldronSlots = [];
         for (let i = 0; i < uiConfig.cauldron.maxSlots; i++) {
             let cauldronSlot = new CauldronSlot(
                 this, 
@@ -39,13 +39,84 @@ export default class CauldronUIScene extends Phaser.Scene {
                 cauldron.y - (cauldron.height * cauldron.originY) + uiConfig.cauldron.slotStartY + uiConfig.cauldronSlot.height / 2
             );
             this.add.existing(cauldronSlot);
-            cauldronSlots.push(cauldronSlot);
+            this.cauldronSlots.push(cauldronSlot);
         }
 
+        // display player inventory
+        let inventoryStartX = width - 300;
+        let inventoryStartY = 50;
+        let inventoryPadding = 10;
         this.stageScene.player.inventory.list.forEach(itemGroup => {
-            let icon = itemGroup.item.generateIcon(this, 100, 100);
-            this.add.existing(icon);
-        })
+            let draggableIcon = itemGroup.item.generateIcon(this, inventoryStartX, inventoryStartY).setInteractive();
+            draggableIcon.itemGroup = itemGroup;
+            draggableIcon.originalX = draggableIcon.x;
+            draggableIcon.originalY = draggableIcon.y;
+            this.add.existing(draggableIcon);
+            this.input.setDraggable(draggableIcon);
+
+            // descriptive text
+            let text = this.add.text(inventoryStartX + draggableIcon.width + inventoryPadding, inventoryStartY, itemGroup.item.label + ' x ' + itemGroup.quantity, { fontFamily: 'Arial', fontSize: 20, color: '#ffffff' });
+
+            inventoryStartY += 50;
+        });
+
+        // put them back at icon if not in a cauldron slot
+        this.input.on('dragstart', (pointer, gameObject) => {
+            if (gameObject.itemGroup) {
+                // if we are our original spot in inventory, then create a dummy placeholder as we get moved around
+                if (gameObject.x === gameObject.originalX && gameObject.y === gameObject.originalY) {
+                    let dummyIcon = gameObject.itemGroup.item.generateIcon(this, gameObject.x, gameObject.y);
+                    gameObject.dummyIcon = dummyIcon;
+                    this.add.existing(dummyIcon);
+                }
+            }
+        });
+
+        // drag things around
+        this.input.on('drag', (pointer, gameObject, dragX, dragY) => {
+            gameObject.x = dragX;
+            gameObject.y = dragY;
+        });
+
+        // put them back at icon if not in a cauldron slot
+        this.input.on('dragend', (pointer, gameObject) => {
+            if (gameObject.itemGroup) {
+                let { x, y } = gameObject;
+                let foundSlot = false;
+
+                // check each cauldron slot and store us in one if we are within bounds
+                this.cauldronSlots.forEach(slot => {
+                    let bounds = slot.getBounds();
+
+                    if (bounds.x <= x && x <= bounds.x + bounds.width && bounds.y <= y && y <= bounds.y + bounds.height && (!slot.slottedItem || slot.slottedItem == gameObject)) {
+                        slot.slottedItem = gameObject;
+                        gameObject.cauldronSlot = slot;
+                        gameObject.x = slot.x;
+                        gameObject.y = slot.y;
+                        foundSlot = true;
+                    }
+                });
+
+                // if we didn't get placed in a cauldron slot then we reset
+                if (!foundSlot) {
+                    // move us back to our original position
+                    gameObject.x = gameObject.originalX;
+                    gameObject.y = gameObject.originalY;
+
+                    // we could have moved this out of a cauldron slot, if so update state to reflect that
+                    if (gameObject.cauldronSlot) {
+                        gameObject.cauldronSlot.slottedItem = undefined;
+                        gameObject.cauldronSlot = undefined;
+                    }
+
+                    // destroy any dummy item we had
+                    if (gameObject.dummyIcon) {
+                        gameObject.dummyIcon.destroy();
+                        gameObject.dummyIcon = undefined;
+                    }
+                }
+            }
+        });
     }
 
     update () {
