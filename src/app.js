@@ -10,6 +10,7 @@ require('./index.html'); // so we get it in the dist
 import LoadingScene from './scenes/loading';
 import MainMenuScene from './scenes/main-menu';
 import TutorialScene from './scenes/stage/tutorial';
+import TutorialUIScene from './scenes/stage/tutorial-ui';
 import CauldronUIScene from './scenes/cauldron-ui';
 
 var phaserGameConfig = {
@@ -23,7 +24,7 @@ var phaserGameConfig = {
             //debug: true, // enable to see physics bodies outlined
         }
     },
-    scene: [LoadingScene, MainMenuScene, TutorialScene, CauldronUIScene]
+    scene: [LoadingScene, MainMenuScene, TutorialScene, TutorialUIScene, CauldronUIScene]
 }
 
 let game = new Phaser.Game(phaserGameConfig);

@@ -29,7 +29,7 @@ export default class MyStageScene extends Stage {
 */
 export default class Stage extends Phaser.Scene {
     constructor (key) {
-        if (!key) throw 'Scene key not defined!';
+        if (!key || typeof key !== 'string') throw 'Scene key not defined!';
 
         super({ key: key });
     }
@@ -177,8 +177,19 @@ export default class Stage extends Phaser.Scene {
     }
 
     startCauldronUI() {
-        this.scene.pause();
         this.scene.launch('CauldronUI', { scene: this });
+    }
+
+    pause () {
+        this.scene.pause();
+
+        if (this.uiScene) this.uiScene.pause();
+    }
+
+    resume () {
+        this.scene.resume();
+
+        if (this.uiScene) this.uiScene.resume();
     }
 
     getActorClass(className) {
@@ -199,4 +210,11 @@ export default class Stage extends Phaser.Scene {
             "WaterEssence": WaterEssence
         }[className];
     }
+
+    setUI (sceneKey) {
+        this.scene.launch(sceneKey);
+        this.uiScene = this.scene.get(sceneKey);
+    }
+
+    get ui () { return this.uiScene; }
 };

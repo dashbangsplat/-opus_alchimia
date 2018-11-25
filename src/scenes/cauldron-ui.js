@@ -12,9 +12,14 @@ export default class CauldronUIScene extends Phaser.Scene {
     }
 
     init (data) {
-        this.lastScene = data.scene.sys.config.key;
+        // pause the current stage scene
+        this.stageScene = data.scene;
+        this.stageScene.pause();
+
+        // bring myself to the front
         this.scene.bringToTop();
 
+        // setup input
         this.inputKeys = {};
         this.inputKeys.exit = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     }
@@ -41,8 +46,13 @@ export default class CauldronUIScene extends Phaser.Scene {
     update () {
         if (this.inputKeys.exit.isDown) {
             this.inputKeys.exit.isDown = false; // reset the key so it isn't remembered
-            this.scene.resume(this.lastScene);
+
+            // resume the current stage scene
+            this.stageScene.resume();
+
+            // put myself to sleep
             this.scene.sleep();
+
             return;
         }
     }
