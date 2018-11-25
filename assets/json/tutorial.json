@@ -86,8 +86,47 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":520,
-                 "y":1454
+                 "x":786,
+                 "y":1447
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"triggers",
+         "objects":[
+                {
+                 "gid":338,
+                 "height":16,
+                 "id":5,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":"TutorialUseCauldron"
+                        }, 
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":1000
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":32
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":927,
+                 "y":1447
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -107,8 +146,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":7,
- "nextobjectid":5,
+ "nextlayerid":8,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.0",
@@ -364,6 +403,30 @@
                          "name":"type",
                          "type":"string",
                          "value":"Actor"
+                        }]
+                }, 
+                {
+                 "id":337,
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Trigger"
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":0
                         }]
                 }],
          "tilewidth":16

@@ -189,6 +189,7 @@
             <key type="filename">src/light_essence.png</key>
             <key type="filename">src/magic_essence.png</key>
             <key type="filename">src/prop_icon.png</key>
+            <key type="filename">src/trigger_icon.png</key>
             <key type="filename">src/water_essence.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -362,6 +363,7 @@
             <filename>src/player_icon.png</filename>
             <filename>src/actor_icon.png</filename>
             <filename>src/prop_icon.png</filename>
+            <filename>src/trigger_icon.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

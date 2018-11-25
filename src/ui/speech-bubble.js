@@ -15,7 +15,7 @@ export default class SpeechBubble extends Phaser.GameObjects.Group {
         this._bubble.fillStyle(0x000000, .75);
 
         //  Bubble outline line style
-        this._bubble.lineStyle(4, 0x0000af, .75);
+        this._bubble.lineStyle(4, 0xaf0000, .75);
 
         //  Bubble shape and outline
         this._bubble.strokeRoundedRect(this.bubbleX, this.bubbleY, this.bubbleWidth, this.bubbleHeight, 16);
@@ -30,7 +30,7 @@ export default class SpeechBubble extends Phaser.GameObjects.Group {
         this._textContent = '';
         this._displayText = '';
         this._textDisplayDelay = 50;
-        this._textDisplayCurrentTime = 0;
+        this._textDisplayCurrentTime = this._textDisplayDelay;
     }
 
     get text () { return this._textContent; }
@@ -39,6 +39,8 @@ export default class SpeechBubble extends Phaser.GameObjects.Group {
         this._textContent = str;
 
         this._displayText = '';
+
+        this._textDisplayCurrentTime = this._textDisplayDelay;
     }
 
     updateText (str) {

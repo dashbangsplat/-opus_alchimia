@@ -1,6 +1,6 @@
 import Player from '../actors/actor/player';
-import Cauldron from '../props/prop/cauldron';
 
+import Cauldron from '../props/prop/cauldron';
 import AirEssence from '../props/prop/essence/air';
 import DarkEssence from '../props/prop/essence/dark';
 import EarthEssence from '../props/prop/essence/earth';
@@ -8,6 +8,8 @@ import FireEssence from '../props/prop/essence/fire';
 import LightEssence from '../props/prop/essence/light';
 import MagicEssence from '../props/prop/essence/magic';
 import WaterEssence from '../props/prop/essence/water';
+
+import TutorialUseCauldron from '../triggers/trigger/tutorial-use-cauldron';
 
 /* abstract stage class, don't add directly to app
 
@@ -54,6 +56,7 @@ export default class Stage extends Phaser.Scene {
     create () {
         this.actors = this.add.group();
         this.props = this.add.group();
+        this.triggers = this.add.group();
 
         this.setupMap();
 
@@ -61,17 +64,9 @@ export default class Stage extends Phaser.Scene {
 
         this.setupActors();
 
-        // add collisions/overlapping for actors
-        this.actors.getChildren().forEach(child => {
-            this.addColliders(child);
-            this.addOverlapping(child);
-        });
+        this.setupTriggers();
 
-        // add collisions/overlapping for props
-        this.props.getChildren().forEach(child => {
-            this.addColliders(child);
-            this.addOverlapping(child);
-        });
+        this.setupCollisionsAndOverlapping();
     }
 
     // Stage related methods
@@ -125,8 +120,7 @@ export default class Stage extends Phaser.Scene {
                 let ActorClass = this.getActorClass(actorProperties.class); 
 
                 let actorInstance = new ActorClass(this);
-                actorInstance.setX(actor.x);
-                actorInstance.setY(actor.y);
+                actorInstance.setPosition(actor.x, actor.y);
 
                 if (actorInstance instanceof Player) {
                     this.cameras.main.startFollow(actorInstance, true);
@@ -148,11 +142,48 @@ export default class Stage extends Phaser.Scene {
                 let PropClass = this.getPropClass(propProperties.class); 
 
                 let propInstance = new PropClass(this);
-                propInstance.setX(prop.x);
-                propInstance.setY(prop.y);
+                propInstance.setPosition(prop.x, prop.y);
 
                 this.props.add(propInstance);
             });
+        });
+    }
+
+    setupTriggers () {
+        this.tilemap.objects.forEach(objectLayer => {
+            if (objectLayer.name !== 'triggers') return;
+
+            objectLayer.objects.forEach(trigger => {
+                let triggerProperties = _.reduce(trigger.properties, (properties, property) => { properties[property.name] = property.value; return properties; }, {});
+
+                let TriggerClass = this.getTriggerClass(triggerProperties.class); 
+
+                let triggerInstance = new TriggerClass(this);
+                triggerInstance.setPosition(trigger.x, trigger.y);
+                triggerInstance.setSize(triggerProperties.width, triggerProperties.height);
+
+                this.triggers.add(triggerInstance);
+            }); 
+        })
+    }
+
+    setupCollisionsAndOverlapping () {
+        // add collisions/overlapping for actors
+        this.actors.getChildren().forEach(child => {
+            this.addColliders(child);
+            this.addOverlapping(child);
+        });
+
+        // add collisions/overlapping for props
+        this.props.getChildren().forEach(child => {
+            this.addColliders(child);
+            this.addOverlapping(child);
+        });
+
+        // add collisions/overlapping for triggers
+        this.triggers.getChildren().forEach(child => {
+            this.addColliders(child);
+            this.addOverlapping(child);
         });
     }
 
@@ -208,6 +239,12 @@ export default class Stage extends Phaser.Scene {
             "LightEssence": LightEssence,
             "MagicEssence": MagicEssence,
             "WaterEssence": WaterEssence
+        }[className];
+    }
+
+    getTriggerClass(className) {
+        return {
+            "TutorialUseCauldron": TutorialUseCauldron
         }[className];
     }
 
