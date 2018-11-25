@@ -6,4 +6,6 @@ export default class MagicEssence extends Essence {
 
         this.setTint(0xdd66ff, 0x0000ff, 0xdd66ff, 0x0000ff);
     }
+
+    get label () { return 'Magic Essence'; }
 }

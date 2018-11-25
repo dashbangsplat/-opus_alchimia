@@ -96,7 +96,7 @@
             "standLeft": {
                 "key": "master-alchemist-stand-left",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__left_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_left_stand" }
                 ],
                 "frameRate": 1,
                 "repeat": -1
@@ -112,7 +112,7 @@
             "standRight": {
                 "key": "master-alchemist-stand-right",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__right_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_right_stand" }
                 ],
                 "frameRate": 1,
                 "repeat": -1
@@ -120,7 +120,7 @@
             "standDown": {
                 "key": "master-alchemist-stand-down",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__down_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_down_stand" }
                 ],
                 "frameRate": 1,
                 "repeat": -1
@@ -128,10 +128,10 @@
             "walkLeft": {
                 "key": "master-alchemist-walk-left",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__left_walk_1" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__left_stand" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__left_walk_2" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__left_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_left_walk_1" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_left_stand" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_left_walk_2" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_left_stand" }
                 ],
                 "frameRate": 8,
                 "repeat": -1
@@ -139,10 +139,10 @@
              "walkUp": {
                 "key": "master-alchemist-walk-up",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__up_walk_1" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__up_stand" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__up_walk_2" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__up_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_up_walk_1" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_up_stand" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_up_walk_2" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_up_stand" }
                 ],
                 "frameRate": 8,
                 "repeat": -1
@@ -150,10 +150,10 @@
             "walkRight": {
                 "key": "master-alchemist-walk-right",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__right_walk_1" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__right_stand" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__right_walk_2" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__right_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_right_walk_1" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_right_stand" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_right_walk_2" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_right_stand" }
                 ],
                 "frameRate": 8,
                 "repeat": -1
@@ -161,10 +161,10 @@
             "walkDown": {
                 "key": "master-alchemist-walk-down",
                 "frames": [
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__down_walk_1" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__down_stand" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__down_walk_2" },
-                    { "key": "sprite-atlas", "frame": "townsfolk_m__down_stand" }
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_down_walk_1" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_down_stand" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_down_walk_2" },
+                    { "key": "sprite-atlas", "frame": "townsfolk_m_down_stand" }
                 ],
                 "frameRate": 8,
                 "repeat": -1

@@ -41,6 +41,11 @@ export default class CauldronUIScene extends Phaser.Scene {
             this.add.existing(cauldronSlot);
             cauldronSlots.push(cauldronSlot);
         }
+
+        this.stageScene.player.inventory.list.forEach(itemGroup => {
+            let icon = itemGroup.item.generateIcon(this, 100, 100);
+            this.add.existing(icon);
+        })
     }
 
     update () {

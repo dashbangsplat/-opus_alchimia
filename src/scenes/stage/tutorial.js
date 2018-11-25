@@ -3,6 +3,7 @@ import gameConfig from '../../config/game';
 import Player from '../../actors/actor/player';
 
 import Cauldron from '../../props/prop/cauldron';
+import MagicEssenceFactory from '../../props/prop/essence/magic-factory';
 
 import TutorialUseCauldron from '../../triggers/trigger/tutorial-use-cauldron';
 
@@ -28,6 +29,9 @@ export default class TutorialScene extends Stage {
         // start with cauldron hidden
         this.hideCauldron();
 
+        // setup a magic essence factory to give the player a magic essence at the right time in the tutorial
+        this.magicEssenceFactory = new MagicEssenceFactory(this);
+
         this.ui.events.once('ui-created', () => {
             this.ui.setText("Welcome my apprentice, please come forth.\n\n(Use WASD to move and spacebar to jump)", () => {
                 this.setupTriggerOnTutorialUseCauldron(); 
@@ -49,6 +53,7 @@ export default class TutorialScene extends Stage {
                         this.player.enableMovement();
                         this.player.enableUseCauldron();
                         this.showCauldron();
+                        this.magicEssenceFactory.createOne(this.getCauldron().x + 50, this.getCauldron().y);
                         this.disableTriggerOnTutorialUseCauldron();
                     });
 
@@ -62,11 +67,15 @@ export default class TutorialScene extends Stage {
         this.triggers.getChildren().filter(trigger => { return trigger instanceof TutorialUseCauldron; }).forEach(trigger => { trigger.disable(); });
     }
 
+    getCauldron () {
+        return _.head(this.props.getChildren().filter(prop => { return prop instanceof Cauldron; }));
+    }
+
     hideCauldron () {
-        this.props.getChildren().filter(prop => { return prop instanceof Cauldron; }).forEach(cauldron => { cauldron.disableBody(true, true); });
+        this.getCauldron().disableBody(true, true);
     }
 
     showCauldron () {
-        this.props.getChildren().filter(prop => { return prop instanceof Cauldron; }).forEach(cauldron => { cauldron.enableBody(false, 0, 0, true, true); });
+        this.getCauldron().enableBody(false, 0, 0, true, true);
     }
 };

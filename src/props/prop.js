@@ -5,6 +5,8 @@ import Attributes from '../generics/attributes';
 import Gravity from './prop-attribute/gravity';
 import Active from './prop-attribute/active';
 
+import PropInventoryItem from './prop-inventory-item';
+
 export default class Prop extends
     Collider ( Throwable ( 
         Phaser.Physics.Arcade.Sprite 
@@ -16,14 +18,37 @@ export default class Prop extends
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this, false);
 
-        // actors collide with world bounds
-        this.setCollideWorldBounds(true);
-
         // attributes
         this._attributes = new Attributes();
         this._attributes.addAttribute(new Gravity(this));
         this._attributes.addAttribute(new Active(this));
+
+        // since we are dynamically generated... add colliders/overlapping for the potion
+        this.scene.addColliders(this);
+        this.scene.addOverlapping(this);
+
+        // add ourselves to props list
+        if (this.scene.props) this.scene.props.add(this);
+
+        // actors collide with world bounds
+        this.setCollideWorldBounds(true);
     }
 
+    get label () { return 'Prop'; }
+
     get attributes () { return this._attributes }
+
+    get inventoryItem () { return new PropInventoryItem(this); }
+
+    remove () {
+        // remove ourselves from props list
+        if (this.scene.props) this.scene.props.remove(this);
+
+        // destroy out stuff
+        this.destroyCollisionHandlers();
+        this.destroyOverlapHandlers();
+
+        // destroy ourself (from Phaser.Physics.Arcade.Sprite)
+        this.destroy();
+    }
 }

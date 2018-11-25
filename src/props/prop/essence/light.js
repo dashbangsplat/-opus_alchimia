@@ -6,4 +6,6 @@ export default class LightEssence extends Essence {
 
         this.setTint(0xffffaa, 0xffffff, 0xffffff, 0xffffaa);
     }
+
+    get label () { return 'Light Essence'; }
 }

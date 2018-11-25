@@ -6,4 +6,6 @@ export default class WaterEssence extends Essence {
 
         this.setTint(0x3333cc, 0x0000ff, 0x0000ff, 0x3333cc);
     }
+
+    get label () { return 'Water Essence'; }
 }

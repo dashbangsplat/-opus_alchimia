@@ -6,4 +6,6 @@ export default class FireEssence extends Essence {
 
         this.setTint(0xaa0000, 0xaa6600, 0xaa6600, 0xaa0000);
     }
+
+    get label () { return 'Fire Essence'; }
 }

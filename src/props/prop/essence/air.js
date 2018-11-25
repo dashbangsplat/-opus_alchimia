@@ -6,4 +6,6 @@ export default class AirEssence extends Essence {
 
         this.setTint(0xffff33, 0x333399, 0x333399, 0xffff33);
     }
+
+    get label () { return 'Air Essence'; }
 }

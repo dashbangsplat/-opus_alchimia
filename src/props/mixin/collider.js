@@ -19,6 +19,10 @@ export default (superclass) => class Collider extends superclass {
         Object.values(this._collisionHandlers).forEach(handler => handler(object1, object2) );
     }
 
+    destroyCollisionHandlers () {
+        this._collisionHandlers = undefined;
+    }
+
     // override this to change default collision settings. This is used in a scene to determine collision setup for a prop
     collisionSettings () {
         return {
@@ -47,11 +51,15 @@ export default (superclass) => class Collider extends superclass {
         Object.values(this._overlapHandlers).forEach(handler => handler(object1, object2) );
     }
 
+    destroyOverlapHandlers () {
+        this._overlapHandlers = undefined;
+    }
+
     // override this to change default overlap settings. This is used in a scene to determine overlap setup for a prop
     overlapSettings () {
         return {
             map: false,
-            actors: false,
+            actors: true,
             props: false 
         };
     }

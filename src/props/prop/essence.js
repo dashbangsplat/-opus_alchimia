@@ -1,9 +1,8 @@
 import propConfig from '../../config/prop.json';
 
 import Prop from '../prop';
-import Collectable from '../mixin/collectable';
 
-export default class Essence extends Collectable ( Prop ) {
+export default class Essence extends Prop {
     constructor (scene, x, y, type = 'magic') {
         let configKey = `${type}Essence`;
 

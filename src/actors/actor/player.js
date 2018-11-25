@@ -51,6 +51,21 @@ export default class Player extends Actor {
             }
         });
 
+        this.registerOverlapHandler('pickupEssence', (object1, object2) => {
+            let other = object1 === this ? object2 : object1;
+   
+            if (!other.constructor.name.match(/Essence/)) return;
+
+            // add as an inventory item
+            this.inventory.add(other.inventoryItem);
+
+            // remove the prop
+            other.remove();
+            other = undefined;
+
+            console.log(this.inventory);
+        });
+
         this.enableMovement();
         this.enableActions();
         this.enableUseCauldron();

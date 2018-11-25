@@ -4,6 +4,7 @@ import Walker from './mixin/walker';
 import Jumper from './mixin/jumper';
 import Thrower from './mixin/thrower';
 import Collider from './mixin/collider';
+import Inventory from './mixin/inventory';
 
 import Attributes from '../generics/attributes';
 import Bounce from './actor-attribute/bounce';
@@ -14,9 +15,9 @@ import Strength from './actor-attribute/strength';
 import WalkVelocity from './actor-attribute/walk-velocity';
 
 export default class Actor extends
-    Collider ( Walker ( Jumper ( Thrower (
+    Collider ( Walker ( Jumper ( Thrower ( Inventory (
         Phaser.Physics.Arcade.Sprite 
-    ) ) ) ) {
+    ) ) ) ) ) {
     constructor (scene, x = 0, y = 0, key, frame) {
         super(scene, x, y, key, frame);
 

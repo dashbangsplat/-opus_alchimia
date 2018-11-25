@@ -6,4 +6,6 @@ export default class DarkEssence extends Essence {
 
         this.setTint(0x999999, 0x333333, 0x333333, 0x999999);
     }
+
+    get label () { return 'Dark Essence'; }
 }
