@@ -62,8 +62,6 @@ export default class Player extends Actor {
             // remove the prop
             other.remove();
             other = undefined;
-
-            console.log(this.inventory);
         });
 
         this.enableMovement();

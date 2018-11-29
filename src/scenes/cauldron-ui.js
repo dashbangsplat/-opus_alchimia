@@ -2,6 +2,9 @@ import uiConfig from '../config/ui';
 
 import CauldronSlot from '../ui/cauldron-slot';
 
+import Potion from '../props/prop/potion';
+import { POINT_CONVERSION_COMPRESSED } from 'constants';
+
 export default class CauldronUIScene extends Phaser.Scene {
     constructor (config, key = 'CauldronUI') {
         super({ key: key });
@@ -29,8 +32,10 @@ export default class CauldronUIScene extends Phaser.Scene {
 
         this.add.rectangle(width / 2, height / 2, width, height, 0x000000);
 
+        // the cauldron ui
         let cauldron = this.add.image(uiConfig.cauldron.width / 2, height - uiConfig.cauldron.height / 2 + 2, uiConfig.cauldron.key, uiConfig.cauldron.frame);
 
+        // cauldron slots where essence is placed
         this.cauldronSlots = [];
         for (let i = 0; i < uiConfig.cauldron.maxSlots; i++) {
             let cauldronSlot = new CauldronSlot(
@@ -41,6 +46,15 @@ export default class CauldronUIScene extends Phaser.Scene {
             this.add.existing(cauldronSlot);
             this.cauldronSlots.push(cauldronSlot);
         }
+
+        // cauldron result potion
+        let potion = new Potion(this);
+        this.potionIcon = potion.inventoryItem.generateIcon(this);
+        this.potionIcon.setScale(2);
+        this.potionIcon.setPosition(uiConfig.cauldron.width / 2 + this.potionIcon.width / 2, 100)
+        this.add.existing(this.potionIcon);
+        potion.remove();
+        this.potionIcon.visible = false;
 
         // display player inventory
         let inventoryStartX = width - 300;
@@ -84,6 +98,12 @@ export default class CauldronUIScene extends Phaser.Scene {
                 let { x, y } = gameObject;
                 let foundSlot = false;
 
+                // undo previous cauldronSlot if set 
+                if (gameObject.cauldronSlot) {
+                    gameObject.cauldronSlot.slottedItem = undefined;
+                    gameObject.cauldronSlot = undefined;
+                }
+
                 // check each cauldron slot and store us in one if we are within bounds
                 this.cauldronSlots.forEach(slot => {
                     let bounds = slot.getBounds();
@@ -103,12 +123,6 @@ export default class CauldronUIScene extends Phaser.Scene {
                     gameObject.x = gameObject.originalX;
                     gameObject.y = gameObject.originalY;
 
-                    // we could have moved this out of a cauldron slot, if so update state to reflect that
-                    if (gameObject.cauldronSlot) {
-                        gameObject.cauldronSlot.slottedItem = undefined;
-                        gameObject.cauldronSlot = undefined;
-                    }
-
                     // destroy any dummy item we had
                     if (gameObject.dummyIcon) {
                         gameObject.dummyIcon.destroy();
@@ -120,6 +134,14 @@ export default class CauldronUIScene extends Phaser.Scene {
     }
 
     update () {
+        let filledCauldronSlots = this.cauldronSlots.filter(slot => { return slot.slottedItem !== undefined; });
+
+        if (filledCauldronSlots.length > 0) {
+            this.potionIcon.visible = true;
+        } else {
+            this.potionIcon.visible = false;
+        }
+
         if (this.inputKeys.exit.isDown) {
             this.inputKeys.exit.isDown = false; // reset the key so it isn't remembered
 

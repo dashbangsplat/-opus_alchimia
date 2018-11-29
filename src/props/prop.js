@@ -24,8 +24,8 @@ export default class Prop extends
         this._attributes.addAttribute(new Active(this));
 
         // since we are dynamically generated... add colliders/overlapping for the potion
-        this.scene.addColliders(this);
-        this.scene.addOverlapping(this);
+        if (this.scene.addColliders) this.scene.addColliders(this);
+        if (this.scene.addOverlapping) this.scene.addOverlapping(this);
 
         // add ourselves to props list
         if (this.scene.props) this.scene.props.add(this);
