@@ -2,9 +2,9 @@ import actorConfig from '../../config/actor';
 
 import Actor from '../actor';
 
-import Standing from './player-movement-state/standing';
+import Standing from './player/movement-states/standing';
 
-import Idle from './player-action-state/idle';
+import Idle from './player/action-states/idle';
 
 import Potion from '../../props/prop/potion';
 import Cauldron from '../../props/prop/cauldron';

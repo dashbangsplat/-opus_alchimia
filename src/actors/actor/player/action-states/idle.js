@@ -1,5 +1,5 @@
-import State from '../../../generics/state';
-import ChangeState from '../../../generics/state-action/change-state';
+import State from '../../../../generics/state';
+import ChangeState from '../../../../generics/state-action/change-state';
 import ThrowingPotion from './throwing-potion';
 
 export default class Idle extends State {

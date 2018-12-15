@@ -1,6 +1,6 @@
-import State from '../../../generics/state';
-import ChangeState from '../../../generics/state-action/change-state';
-import Standing from '../player-movement-state/standing';
+import State from '../../../../generics/state';
+import ChangeState from '../../../../generics/state-action/change-state';
+import Standing from '../movement-states/standing';
 import Idle from './idle';
 
 export default class ThrowingPotion extends State {
