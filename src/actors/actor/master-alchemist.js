@@ -2,7 +2,7 @@ import actorConfig from '../../config/actor';
 
 import Actor from '../actor';
 
-import Standing from './master-alchemist-movement-state/standing';
+import Standing from './master-alchemist/movement-states/standing';
 
 export default class MasterAlchemist extends Actor {
     constructor (scene, x = 0, y = 0) {

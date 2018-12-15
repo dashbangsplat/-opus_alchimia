@@ -1,5 +1,5 @@
-import State from '../../../generics/state';
-import ChangeState from '../../../generics/state-action/change-state';
+import State from '../../../../generics/state';
+import ChangeState from '../../../../generics/state-action/change-state';
 import Standing from './standing';
 
 export default class Jumping extends State {

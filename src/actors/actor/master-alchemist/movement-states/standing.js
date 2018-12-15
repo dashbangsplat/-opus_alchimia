@@ -1,5 +1,5 @@
-import State from '../../../generics/state';
-import ChangeState from '../../../generics/state-action/change-state';
+import State from '../../../../generics/state';
+import ChangeState from '../../../../generics/state-action/change-state';
 import WalkingRight from './walking-right';
 import WalkingLeft from './walking-left';
 import Jumping from './jumping';
