@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class WalkVelocity extends ActorNumberAttribute {
+export default class WalkVelocity extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Walk Velocity', 'The amount of velocity applied when walking.');
 

@@ -1,8 +1,8 @@
 import Attribute from '../attribute';
 
 export default class NumberAttribute extends Attribute {
-    constructor (name, description) {
-        super(name, description);
+    constructor (entity, name, description) {
+        super(entity, name, description);
 
         this._hasMinimumValue = false;
         this._minimumValue = 0;

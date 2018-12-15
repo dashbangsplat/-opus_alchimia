@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class JumpDuration extends ActorNumberAttribute {
+export default class JumpDuration extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Jump Duration', 'The duration in milliseconds for which a jump occurs.');
 

@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class Bounce extends ActorNumberAttribute {
+export default class Bounce extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Bounce', 'The amount of bounce that happens when colliding with something.');
 
@@ -12,6 +12,6 @@ export default class Bounce extends ActorNumberAttribute {
         super.updateValue(val);
 
         // we need a physics body on our actor before we can set this or there will be an error
-        this.actor.setBounceY(this.value);
+        this.entity.setBounceY(this.value);
     }
 }

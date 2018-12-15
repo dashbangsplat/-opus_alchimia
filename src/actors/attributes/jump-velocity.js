@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class JumpVelocity extends ActorNumberAttribute {
+export default class JumpVelocity extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Jump Velocity', 'The amount of velocity applied when jumping.');
 

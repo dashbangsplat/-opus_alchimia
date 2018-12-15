@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class Gravity extends ActorNumberAttribute {
+export default class Gravity extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Gravity', 'The amount of gravity, downward velocity, generally being applied.');
 
@@ -12,6 +12,6 @@ export default class Gravity extends ActorNumberAttribute {
         super.updateValue(val);
 
         // we need a physics body on our actor before we can set this or there will be an error
-        this.actor.setGravityY(this.value);
+        this.entity.setGravityY(this.value);
     }
 }

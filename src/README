@@ -1,0 +1,1 @@
+TODO Move architecture from Objects + Mixins to thin Model-Like Objects with Actions (functions - example actorCollidesWithSomething or actorThrowsProp ) with work on objects.

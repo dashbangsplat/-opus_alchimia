@@ -7,12 +7,12 @@ import Collider from './mixin/collider';
 import Inventory from './mixin/inventory';
 
 import Attributes from '../generics/attributes';
-import Bounce from './actor-attribute/bounce';
-import Gravity from './actor-attribute/gravity';
-import JumpDuration from './actor-attribute/jump-duration';
-import JumpVelocity from './actor-attribute/jump-velocity';
-import Strength from './actor-attribute/strength';
-import WalkVelocity from './actor-attribute/walk-velocity';
+import Bounce from './attributes/bounce';
+import Gravity from './attributes/gravity';
+import JumpDuration from './attributes/jump-duration';
+import JumpVelocity from './attributes/jump-velocity';
+import Strength from './attributes/strength';
+import WalkVelocity from './attributes/walk-velocity';
 
 export default class Actor extends
     Collider ( Walker ( Jumper ( Thrower ( Inventory (

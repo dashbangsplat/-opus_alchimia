@@ -1,12 +1,15 @@
 export default class Attribute {
-    constructor (name = 'Change Me', description = 'Change Me') {
+    constructor (entity = {}, name = 'Change Me', description = 'Change Me') {
         let thisName = this.constructor.name;
         this._key = thisName.charAt(0).toLowerCase() + thisName.slice(1);
-        this._name = name;
-        this._description = description;
+        this._entity = entity; // the source entity (actors, props, etc) that has this attribute
+        this._name = name; // the name of this attirbute
+        this._description = description; // a summary of what this attribute is
     }
 
     get key () { return this._key }
+
+    get entity () { return this._entity }
 
     get name () { return this._name }
 

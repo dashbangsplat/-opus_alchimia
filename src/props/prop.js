@@ -2,8 +2,8 @@ import Throwable from './mixin/throwable';
 import Collider from './mixin/collider';
 
 import Attributes from '../generics/attributes';
-import Gravity from './prop-attribute/gravity';
-import Active from './prop-attribute/active';
+import Gravity from './attributes/gravity';
+import Active from './attributes/active';
 
 import PropInventoryItem from './prop-inventory-item';
 

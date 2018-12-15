@@ -1,8 +1,8 @@
 import Attribute from '../attribute';
 
 export default class BoolAttribute extends Attribute {
-    constructor (name, description, defaultValue = false) {
-        super(name, description);
+    constructor (entity, name, description, defaultValue = false) {
+        super(entity, name, description);
 
         this._value = defaultValue;
     }

@@ -1,6 +1,6 @@
-import ActorNumberAttribute from '../actor-number-attribute';
+import NumberAttribute from '../../generics/attribute/number';
 
-export default class Strength extends ActorNumberAttribute {
+export default class Strength extends NumberAttribute {
     constructor (actor) {
         super(actor, 'Strength', 'The impacts the velocity and duration of thrown objects.');
 
