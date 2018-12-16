@@ -1,4 +1,5 @@
 import Prop from '../../props/prop';
+import { throwProp } from '../../props/actions/throwing';
 
 export function actorThrowsPropAtTarget(actor, prop, target) {
     if (!(prop instanceof Prop)) throw `${prop} is not a prop`;
@@ -7,5 +8,5 @@ export function actorThrowsPropAtTarget(actor, prop, target) {
 
     let velocity = prop.scene.physics.velocityFromRotation(angleToTarget, actor.attributes.strength.value * 30);
 
-    prop.prepareToThrow(actor.x, actor.y, velocity, actor.attributes.strength.value * 200);
+    throwProp(prop, actor.x, actor.y, velocity, actor.attributes.strength.value * 200);
 }

@@ -1,5 +1,3 @@
-import Throwable from './mixin/throwable';
-
 import Attributes from '../generics/attributes';
 import { setupCollisionDetectionOnThing, setCollidesWithTypeForThing, setOverlapsWithTypeForThing,
          destroyCollisionHandlersForThing, destroyOverlapHandlersForThing } from '../generics/actions/collision';
@@ -9,10 +7,7 @@ import Active from './attributes/active';
 
 import InventoryItem from '../generics/inventory-item';
 
-export default class Prop extends
-    Throwable ( 
-        Phaser.Physics.Arcade.Sprite 
-    ) {
+export default class Prop extends Phaser.Physics.Arcade.Sprite {
     constructor (scene, x = 0, y = 0, key, frame) {
         super(scene, x, y, key, frame);
 
@@ -47,6 +42,21 @@ export default class Prop extends
     get attributes () { return this._attributes }
 
     get inventoryItem () { return new InventoryItem(this); }
+
+    preUpdate (time, delta) {
+        // if we are throwing and we have a lifespan
+        if (this.hasLifespan) {
+            this.lifespan -= delta;
+
+            if (this.lifespan <= 0) {
+                this.hasLifespan = undefined;
+                this.lifespan = undefined;
+                this.disableBody(true, true);
+            }
+        }
+
+        if (super.preUpdate) super.preUpdate(time, delta);
+    }
 
     remove () {
         // remove ourself from props list
