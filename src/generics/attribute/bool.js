@@ -9,7 +9,7 @@ export default class BoolAttribute extends Attribute {
 
     // we set it up this way so that children can overwritten this as needed
     updateValue (val) {
-        let value = new Boolean(val); // make sure this is a number
+        let value = new Boolean(val); // make sure this is a boolean
 
         this._value = value;
     }

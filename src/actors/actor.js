@@ -13,6 +13,7 @@ import JumpDuration from './attributes/jump-duration';
 import JumpVelocity from './attributes/jump-velocity';
 import Strength from './attributes/strength';
 import WalkVelocity from './attributes/walk-velocity';
+import Facing from './attributes/facing';
 
 export default class Actor extends
     Walker ( Jumper ( Thrower ( Inventory (
@@ -40,6 +41,7 @@ export default class Actor extends
         this._attributes.addAttribute(new JumpVelocity(this));
         this._attributes.addAttribute(new Strength(this));
         this._attributes.addAttribute(new WalkVelocity(this));
+        this._attributes.addAttribute(new Facing(this));
 
         // Collision Detection
         setupCollisionDetectionOnThing(this);
