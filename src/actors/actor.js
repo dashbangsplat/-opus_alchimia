@@ -3,8 +3,6 @@ import Attributes from '../generics/attributes';
 import Inventory from '../generics/inventory';
 import StateMachine from '../generics/state-machine';
 
-import Thrower from './mixin/thrower';
-
 import Bounce from './attributes/bounce';
 import Gravity from './attributes/gravity';
 import JumpVelocity from './attributes/jump-velocity';
@@ -12,10 +10,7 @@ import Strength from './attributes/strength';
 import WalkVelocity from './attributes/walk-velocity';
 import Facing from './attributes/facing';
 
-export default class Actor extends
-    Thrower ( 
-        Phaser.Physics.Arcade.Sprite 
-    ) {
+export default class Actor extends Phaser.Physics.Arcade.Sprite {
     constructor (scene, x = 0, y = 0, key, frame) {
         super(scene, x, y, key, frame);
 

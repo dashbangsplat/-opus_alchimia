@@ -23,7 +23,7 @@ export default class TutorialScene extends Stage {
 
         // start player frozen
         this.player.disableUseCauldron();
-        this.player.disableActions();
+        //this.player.disableActions();
         this.player.disableMovement();
 
         // start with cauldron hidden

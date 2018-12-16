@@ -1,6 +1,10 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
+
+import { actorThrowsPropAtTarget } from '../../../actions/throwing';
+
 import Standing from '../movement-states/standing';
+
 import Idle from './idle';
 
 export default class ThrowingPotion extends State {
@@ -28,7 +32,7 @@ export default class ThrowingPotion extends State {
         player.movement.currentState.setStandingAnimation(player, facing); 
 
         // throw it!
-        player.throw(potion, player, target);
+        actorThrowsPropAtTarget(player, potion, target);
 
         return super.init(data);
     }
