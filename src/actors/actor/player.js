@@ -69,9 +69,15 @@ export default class Player extends Actor {
         this.enableUseCauldron();
     }
 
+    get isPlayer () { return true; }
+
     enableMovement () { this.canMove = true; }
 
-    disableMovement () { this.canMove = false; }
+    disableMovement () { 
+        this.canMove = false;
+
+        this.setMovementStanding(); 
+    }
 
     enableActions () { this.canAct = true; }
 
@@ -87,9 +93,9 @@ export default class Player extends Actor {
 
     // will only be invoked if added to gameobject (not just physics object)
     preUpdate (time, delta) {
-        if (this.canMove) this.movement.update({ "player": this });
+        if (this.canMove) this.movement.update({ "player": this, time, delta });
 
-        if (this.canAct) this.action.update({ "player": this });
+        if (this.canAct) this.action.update({ "player": this, time, delta });
 
         if (super.preUpdate) super.preUpdate(time, delta);
     }

@@ -1,5 +1,8 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
+
+import { startActorWalkingLeft } from '../../../actions/movement';
+
 import Standing from './standing';
 import Jumping from './jumping';
 
@@ -13,7 +16,7 @@ export default class WalkingLeft extends State {
 
         actor.play(animateWalkingLeft);
 
-        actor.walkLeft();
+        startActorWalkingLeft(actor);
 
         return super.init(data);
     }

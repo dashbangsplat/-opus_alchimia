@@ -1,5 +1,8 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
+
+import { isActorWalkingRight, isActorWalkingLeft, stopActorWalking } from '../../../actions/movement';
+
 import WalkingRight from './walking-right';
 import WalkingLeft from './walking-left';
 import Jumping from './jumping';
@@ -9,10 +12,10 @@ export default class Standing extends State {
         // set actor using destructuring
         let { actor } = data;
 
-        let facing = actor.isWalkingLeft() ? 'left' : actor.isWalkingRight() ? 'right' : ''; 
-        this.setStandingAnimation(actor, facing); 
+        let standingAnimation = isActorWalkingLeft(actor) ? 'left' : isActorWalkingRight(actor) ? 'right' : ''; 
+        this.setStandingAnimation(actor, standingAnimation);
 
-        actor.stopWalking();
+        stopActorWalking(actor);
 
         return super.init(data);
     }

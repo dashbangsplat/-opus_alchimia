@@ -1,5 +1,8 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
+
+import { isActorWalkingRight, isActorWalkingLeft, stopActorWalking, updateWalkingActor } from '../../../actions/movement';
+
 import WalkingRight from './walking-right';
 import WalkingLeft from './walking-left';
 import Jumping from './jumping';
@@ -15,19 +18,17 @@ export default class Standing extends State {
         // reset player movement input states
         right.isDown = altRight.isDown = left.isDown = altLeft.isDown = jump.isDown = false;
        
-        let facing = player.isWalkingLeft() ? 'left' : player.isWalkingRight() ? 'right' : ''; 
-        this.setStandingAnimation(player, facing); 
+        let standingAnimation = isActorWalkingLeft(player) ? 'left' : isActorWalkingRight(player) ? 'right' : ''; 
+        this.setStandingAnimation(player, standingAnimation); 
 
-        player.stopWalking();
-
-
+        stopActorWalking(player);
 
         return super.init(data);
     }
 
     run (data) {
         // set player using destructuring
-        let { player } = data;
+        let { player, time, delta } = data;
 
         // set right, altRight, left, altLeft and jump using destructuring
         let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } } } = player;
@@ -37,6 +38,8 @@ export default class Standing extends State {
         if (left.isDown || altLeft.isDown ) return new ChangeState(WalkingLeft, { "player": player });
 
         if (jump.isDown ) return new ChangeState(Jumping, { "player": player });
+
+        updateWalkingActor(player, time, delta);
         
         return super.run(data);
     }

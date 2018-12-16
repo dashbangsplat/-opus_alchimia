@@ -1,41 +1,48 @@
 import Attribute from '../attribute';
 
 export default class EnumAttribute extends Attribute {
-    constructor (entity, name, description, possibleValues = [], defaultValue = 0) {
+    constructor (entity, name, description, possibleValues = [], defaultValue = null) {
         super(entity, name, description);
 
-        if (!Array.isArray(possibleValues)) throw 'possibleValues is not an array';
+        // setup enumeration
+        this._enum = EnumAttribute.listToEnum(possibleValues);
 
+        // store possible values
         this._possibleValues = possibleValues;
 
-        // setup enumeration
-        this._enum = {};
-        for (let i in this.possibleValues) {
-            this._enum[this.possibleValues[i]] = i;
-        }
-
-        this.updateValue(defaultValue);
+        if (defaultValue !== null) this.updateValue(defaultValue);
     }
 
-    get possibleValues () { this._possibleValues; }
+    // things outside of us use this for conversion
+    static listToEnum (list) {
+        if (!Array.isArray(list)) throw 'list provided is not an array';
+
+        let enumeratedList = {};
+
+        for (let i in list) {
+            enumeratedList[list[i]] = new Number(i).valueOf();
+        }
+
+        return enumeratedList;
+    }
+
+    get possibleValues () { return this._possibleValues; }
 
     get enum () { return this._enum; }
 
-    // we set it up this way so that children can overwritten this as needed
     updateValue (val) {
-        if (typeof val !== 'string') {
-            let index = this._possibleValues.indexof(val);
+        if (typeof(val) === 'string') {
+            let index = this.possibleValues.indexOf(val);
 
-            if (index === -1) throw 'invalid string value being set for enum';
+            if (index >= 0) {
+                this._value = index;
 
-            this._value = index;
+                return;            
+            }
         }
-        else {
-            let value = new Number(val); // make sure this is a number
 
-            if (value < 0 || value >= this._possibleValues.length) throw 'invalid number value being set for enum';
+        let value = new Number(val).valueOf(); // make sure this is a number
 
-            this._value = value;
-        }
+        if (value >= 0 && value < this.possibleValues.length) this._value = value;
     }
 }

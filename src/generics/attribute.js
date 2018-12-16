@@ -5,6 +5,7 @@ export default class Attribute {
         this._entity = entity; // the source entity (actors, props, etc) that has this attribute
         this._name = name; // the name of this attirbute
         this._description = description; // a summary of what this attribute is
+        this._value = null;
     }
 
     get key () { return this._key }
