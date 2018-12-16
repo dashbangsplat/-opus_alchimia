@@ -1,6 +1,6 @@
-import Collider from './mixin/collider';
+import { setupCollisionDetectionOnThing, setOverlapsWithTypeForThing, registerOverlapHanderForThing } from '../generics/actions/collision';
 
-export default class Trigger extends Collider ( Phaser.GameObjects.Zone ) {
+export default class Trigger extends Phaser.GameObjects.Zone {
     constructor(scene) {
         super(scene);
 
@@ -10,10 +10,13 @@ export default class Trigger extends Collider ( Phaser.GameObjects.Zone ) {
         // need to add an arcade physics body to the zone for collision
         scene.physics.add.existing(this);
 
-        // generic collision - generates a touched event
-        this.registerOverlapHandler('generic-touched-trigger-event', (object1, object2) => {
-            let other = object1 == this ? object2 : object1;
+        // Collision Detection
+        setupCollisionDetectionOnThing(this);
+        setOverlapsWithTypeForThing(this, 'actors', true);
+        setOverlapsWithTypeForThing(this, 'props', true);
 
+        // generic collision - generates a touched event
+        registerOverlapHanderForThing(this, 'generic-touched-trigger-event', (self, other) => {
             this.events.emit('touched', other);
         });
     }

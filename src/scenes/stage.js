@@ -1,3 +1,6 @@
+import { triggerCollisionHandlersForThing, registerColliderByTypeForThing,
+         triggerOverlapHandlersForThing, registerOverlapperByTypeForThing } from '../generics/actions/collision';
+
 import Player from '../actors/actor/player';
 import MasterAlchemist from '../actors/actor/master-alchemist';
 
@@ -190,22 +193,20 @@ export default class Stage extends Phaser.Scene {
 
     // provides an interface for a thing to setup collisions
     addColliders (thing) {
-        let callback = thing.triggerCollisionHandlers ? (object1, object2) => { thing.triggerCollisionHandlers(object1, object2); } : () => {};
-        let collisionSettings = thing.collisionSettings ? thing.collisionSettings() : { map: false, actors: false, props: false };
+        let callback = (object1, object2) => { triggerCollisionHandlersForThing(thing, object1, object2) };
 
-        if (collisionSettings.map && !thing._mapCollider) thing._mapCollider = this.physics.add.collider(thing, this.tileLayers.middle, callback); // thing to collide with map
-        if (collisionSettings.actors && !thing._actorsCollider) thing._actorsCollider = this.physics.add.collider(thing, this.actors, callback);
-        if (collisionSettings.props && !thing._propsCollider) thing._propsCollider = this.physics.add.collider(thing, this.props, callback);
+        registerColliderByTypeForThing(thing, 'map', () => this.physics.add.collider(thing, this.tileLayers.middle, callback));
+        registerColliderByTypeForThing(thing, 'actors', () => this.physics.add.collider(thing, this.actors, callback));
+        registerColliderByTypeForThing(thing, 'props', () => this.physics.add.collider(thing, this.props, callback));
     }
 
     // provides an interface for a thing to setup overlapping
     addOverlapping (thing) {
-        let callback = thing.triggerOverlapHandlers ? (object1, object2) => { thing.triggerOverlapHandlers(object1, object2); } : () => {};
-        let overlapSettings = thing.overlapSettings ? thing.overlapSettings() : { map: false, actors: false, props: false };
+        let callback = (object1, object2) => { triggerOverlapHandlersForThing(thing, object1, object2) };
 
-        if (overlapSettings.map && !thing._mapOverlapper) thing._mapOverlapper = this.physics.add.overlap(thing, this.tileLayers.middle, callback); // thing to collide with map
-        if (overlapSettings.actors && !thing._actorsOverlapper) thing._actorsOverlapper = this.physics.add.overlap(thing, this.actors, callback);
-        if (overlapSettings.props && !thing._propsOverlapper) thing._propsOverlapper = this.physics.add.overlap(thing, this.props, callback);
+        registerOverlapperByTypeForThing(thing, 'map', () => this.physics.add.overlap(thing, this.tileLayers.middle, callback));
+        registerOverlapperByTypeForThing(thing, 'actors', () => this.physics.add.overlap(thing, this.actors, callback));
+        registerOverlapperByTypeForThing(thing, 'props', () => this.physics.add.overlap(thing, this.props, callback));
     }
 
     startCauldronUI() {

@@ -2,6 +2,8 @@ import actorConfig from '../../config/actor';
 
 import Actor from '../actor';
 
+import { registerOverlapHanderForThing } from '../../generics/actions/collision';
+
 import Standing from './player/movement-states/standing';
 
 import Idle from './player/action-states/idle';
@@ -15,7 +17,7 @@ export default class Player extends Actor {
 
         this.config = actorConfig.player;
 
-        // setup attributes
+        // setup base attributes
         this.attributes.bounce.value = this.config.attributes.bounce;
         this.attributes.gravity.value = this.config.attributes.gravity;
         this.attributes.jumpDuration.value = this.config.attributes.jumpDuration;
@@ -41,9 +43,8 @@ export default class Player extends Actor {
         // start our player action as idle, other states will be added as needed
         this.action.start(Idle, { "player": this });
 
-        this.registerOverlapHandler('useCauldron', (object1, object2) => {
-            let other = object1 === this ? object2 : object1;
-    
+        // overlap handler for using the cauldron
+        registerOverlapHanderForThing(this, 'useCauldron', (self, other) => {
             if (this.canUseCauldron && other instanceof Cauldron && this.scene.inputKeys.use.isDown) {
                 this.scene.inputKeys.use.isDown = false; // reset the key so it isn't remembered
                 this.movement.setState(Standing, { "player": this }); // set our movement state to standing so we come back from the cauldron UI just standing
@@ -51,9 +52,8 @@ export default class Player extends Actor {
             }
         });
 
-        this.registerOverlapHandler('pickupEssence', (object1, object2) => {
-            let other = object1 === this ? object2 : object1;
-   
+        // overlap handler for picking up essence
+        registerOverlapHanderForThing(this, 'pickupEssence', (self, other) => {
             if (!other.constructor.name.match(/Essence/)) return;
 
             // add as an inventory item
