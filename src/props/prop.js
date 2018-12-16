@@ -7,7 +7,7 @@ import { setupCollisionDetectionOnThing, setCollidesWithTypeForThing, setOverlap
 import Gravity from './attributes/gravity';
 import Active from './attributes/active';
 
-import PropInventoryItem from './prop-inventory-item';
+import InventoryItem from '../generics/inventory-item';
 
 export default class Prop extends
     Throwable ( 
@@ -46,7 +46,7 @@ export default class Prop extends
 
     get attributes () { return this._attributes }
 
-    get inventoryItem () { return new PropInventoryItem(this); }
+    get inventoryItem () { return new InventoryItem(this); }
 
     remove () {
         // remove ourself from props list

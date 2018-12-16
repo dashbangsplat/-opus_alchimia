@@ -1,9 +1,9 @@
 import { setupCollisionDetectionOnThing, setCollidesWithTypeForThing, setOverlapsWithTypeForThing } from '../generics/actions/collision';
 import Attributes from '../generics/attributes';
+import Inventory from '../generics/inventory';
 import StateMachine from '../generics/state-machine';
 
 import Thrower from './mixin/thrower';
-import Inventory from './mixin/inventory';
 
 import Bounce from './attributes/bounce';
 import Gravity from './attributes/gravity';
@@ -13,15 +13,18 @@ import WalkVelocity from './attributes/walk-velocity';
 import Facing from './attributes/facing';
 
 export default class Actor extends
-    Thrower ( Inventory (
+    Thrower ( 
         Phaser.Physics.Arcade.Sprite 
-    ) ) {
+    ) {
     constructor (scene, x = 0, y = 0, key, frame) {
         super(scene, x, y, key, frame);
 
+        // state machines
         this._movementState = new StateMachine();
-
         this._actionState = new StateMachine();
+
+        // inventory
+        this._inventory = new Inventory();
 
         // setup physics body for this actor
         this.scene.add.existing(this);
@@ -45,6 +48,8 @@ export default class Actor extends
         setOverlapsWithTypeForThing(this, 'actors', true);
         setOverlapsWithTypeForThing(this, 'props', true);
     }
+
+    get inventory () { return this._inventory; }
 
     get isPlayer () { return false; }
 

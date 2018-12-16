@@ -1,11 +1,8 @@
-import Prop from './prop';
+export default class InventoryItem {
+    constructor(gameObject) {
+        this._type = gameObject.constructor.name;
 
-export default class PropInventoryItem {
-    constructor(prop) {
-        if (!(prop instanceof Prop)) throw 'prop provide is not of type Prop';
-        this._type = prop.constructor.name;
-
-        this._label = prop.label || '';
+        this._label = gameObject.label || '';
 
         let {
             texture,
@@ -16,7 +13,7 @@ export default class PropInventoryItem {
             tintFill,
             tintTopLeft,
             tintTopRight
-        } = prop;
+        } = gameObject;
 
         this._icon = {
             texture,
