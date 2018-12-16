@@ -1,7 +1,7 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
 
-import { isActorWalkingRight, isActorWalkingLeft, stopActorWalking } from '../../../actions/movement';
+import { isActorWalkingRight, isActorWalkingLeft, stopActorWalking, updateWalkingActor } from '../../../actions/movement';
 
 import WalkingRight from './walking-right';
 import WalkingLeft from './walking-left';
@@ -22,9 +22,11 @@ export default class Standing extends State {
 
     run (data) {
         // set actor using destructuring
-        let { actor } = data;
+        let { actor, time, delta } = data;
 
         // TODO - using AI determine next movement (whether it is to continue to stand or change state)
+
+        updateWalkingActor(actor, time, delta);
         
         return super.run(data);
     }

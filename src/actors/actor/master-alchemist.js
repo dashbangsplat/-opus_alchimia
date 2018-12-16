@@ -13,7 +13,6 @@ export default class MasterAlchemist extends Actor {
         // setup attributes
         this.attributes.bounce.value = this.config.attributes.bounce;
         this.attributes.gravity.value = this.config.attributes.gravity;
-        this.attributes.jumpDuration.value = this.config.attributes.jumpDuration;
         this.attributes.jumpVelocity.value = this.config.attributes.jumpVelocity;
         this.attributes.strength.value = this.config.attributes.strength;
         this.attributes.walkVelocity.value = this.config.attributes.walkVelocity;

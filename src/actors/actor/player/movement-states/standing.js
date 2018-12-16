@@ -15,9 +15,6 @@ export default class Standing extends State {
         // set right, altRight, left, altLeft and jump using destructuring
         let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } } } = player;
 
-        // reset player movement input states
-        right.isDown = altRight.isDown = left.isDown = altLeft.isDown = jump.isDown = false;
-       
         let standingAnimation = isActorWalkingLeft(player) ? 'left' : isActorWalkingRight(player) ? 'right' : ''; 
         this.setStandingAnimation(player, standingAnimation); 
 
@@ -27,19 +24,19 @@ export default class Standing extends State {
     }
 
     run (data) {
-        // set player using destructuring
         let { player, time, delta } = data;
 
-        // set right, altRight, left, altLeft and jump using destructuring
-        let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } } } = player;
+        let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } }, body } = player;
 
-        if (right.isDown || altRight.isDown ) return new ChangeState(WalkingRight, { "player": player });
+        if (player.canMove) {
+            if (right.isDown || altRight.isDown) return new ChangeState(WalkingRight, { "player": player });
 
-        if (left.isDown || altLeft.isDown ) return new ChangeState(WalkingLeft, { "player": player });
+            if (left.isDown || altLeft.isDown ) return new ChangeState(WalkingLeft, { "player": player });
 
-        if (jump.isDown ) return new ChangeState(Jumping, { "player": player });
+            if (jump.isDown && body.onFloor()) return new ChangeState(Jumping, { "player": player });
 
-        updateWalkingActor(player, time, delta);
+            updateWalkingActor(player, time, delta);
+        }
         
         return super.run(data);
     }

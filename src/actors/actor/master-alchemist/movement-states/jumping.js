@@ -1,5 +1,8 @@
 import State from '../../../../generics/state';
 import ChangeState from '../../../../generics/state-action/change-state';
+
+import { startActorJumping, updateJumpingActor } from '../../../actions/movement';
+
 import Standing from './standing';
 
 export default class Jumping extends State {
@@ -7,16 +10,18 @@ export default class Jumping extends State {
         // set actor using destructuring
         let { actor } = data;
 
-        actor.jump();
+        startActorJumping(actor);
 
         return super.init(data);
     }
 
     run (data) {
-        // set actor using destructuring
-        let { actor } = data;
+        let { actor, time, delta } = data;
+        let { body } = actor;
 
-        if (!actor.isJumping) return new ChangeState(Standing, { "actor": actor });
+        if (body.onFloor()) return new ChangeState(Standing, { "actor": actor });
+
+        updateJumpingActor(actor, time, delta);
         
         return super.run(data);
     }

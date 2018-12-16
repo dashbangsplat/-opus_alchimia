@@ -1,23 +1,21 @@
-import StateMachine from '../generics/state-machine';
 import { setupCollisionDetectionOnThing, setCollidesWithTypeForThing, setOverlapsWithTypeForThing } from '../generics/actions/collision';
+import Attributes from '../generics/attributes';
+import StateMachine from '../generics/state-machine';
 
-import Jumper from './mixin/jumper';
 import Thrower from './mixin/thrower';
 import Inventory from './mixin/inventory';
 
-import Attributes from '../generics/attributes';
 import Bounce from './attributes/bounce';
 import Gravity from './attributes/gravity';
-import JumpDuration from './attributes/jump-duration';
 import JumpVelocity from './attributes/jump-velocity';
 import Strength from './attributes/strength';
 import WalkVelocity from './attributes/walk-velocity';
 import Facing from './attributes/facing';
 
 export default class Actor extends
-    Jumper ( Thrower ( Inventory (
+    Thrower ( Inventory (
         Phaser.Physics.Arcade.Sprite 
-    ) ) ) {
+    ) ) {
     constructor (scene, x = 0, y = 0, key, frame) {
         super(scene, x, y, key, frame);
 
@@ -36,7 +34,6 @@ export default class Actor extends
         this._attributes = new Attributes();
         this._attributes.addAttribute(new Bounce(this));
         this._attributes.addAttribute(new Gravity(this));
-        this._attributes.addAttribute(new JumpDuration(this));
         this._attributes.addAttribute(new JumpVelocity(this));
         this._attributes.addAttribute(new Strength(this));
         this._attributes.addAttribute(new WalkVelocity(this));

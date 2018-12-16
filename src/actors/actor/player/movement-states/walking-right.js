@@ -23,18 +23,18 @@ export default class WalkingRight extends State {
     run (data) {
         let { player, time, delta } = data;
 
-        let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } } } = player;
+        let { "scene": { "inputKeys": { "right": right, "altRight": altRight, "left": left, "altLeft": altLeft, "jump": jump } }, body } = player;
 
         if (left.isDown || altLeft.isDown ) {
             right.isDown = altRight.isDown = false;
             return new ChangeState(WalkingLeft, { "player": player });
         } 
 
-        if (jump.isDown ) return new ChangeState(Jumping, { "player": player });
+        if (jump.isDown && body.onFloor()) return new ChangeState(Jumping, { "player": player });
 
         if (right.isUp && altRight.isUp ) return new ChangeState(Standing, { "player": player });
 
-        updateWalkingActor(player, time, delta);
+        if (player.canMove) updateWalkingActor(player, time, delta);
 
         return super.run(data);
     }

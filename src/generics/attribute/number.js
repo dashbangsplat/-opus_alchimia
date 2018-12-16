@@ -16,7 +16,7 @@ export default class NumberAttribute extends Attribute {
     get minimum () { return this._minimumValue }
 
     set minimum (min) {
-        let minimum = new Number(min); // make sure this is a number
+        let minimum = new Number(min).valueOf(); // make sure this is a number
 
         this._hasMinimumValue = true;
 
@@ -32,7 +32,7 @@ export default class NumberAttribute extends Attribute {
     get maximum () { return this._maximumValue }
 
     set maximum (max) {
-        let maximum = new Number(max); // make sure this is a number
+        let maximum = new Number(max).valueOf(); // make sure this is a number
 
         this._hasMaximumValue = true;
 
@@ -47,7 +47,7 @@ export default class NumberAttribute extends Attribute {
 
     // we set it up this way so that children can overwritten this as needed
     updateValue (val) {
-        let value = new Number(val); // make sure this is a number
+        let value = new Number(val).valueOf(); // make sure this is a number
 
         // keep value less than max
         if (this._hasMaximumValue && value > this._maximumValue) value = this._maximumValue;

@@ -10,6 +10,8 @@ export function startActorWalkingLeft (actor) {
 
 export function stopActorWalking (actor) {
     actor.attributes.facing.value = facingEnum.UNDEFINED;
+
+    actor.setVelocityX(0);
 }
 
 export function isActorWalkingRight (actor) {
@@ -43,4 +45,10 @@ export function updateWalkingActor (actor, time, delta) {
     }
 
     actor.setVelocityX(vX);
+}
+
+export function startActorJumping (actor) {
+    let { attributes: { jumpVelocity } } = actor;
+
+    actor.setVelocityY(-jumpVelocity.value);
 }
