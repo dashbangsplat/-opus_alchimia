@@ -55,6 +55,12 @@ export default class TutorialScene extends Stage {
                         this.showCauldron();
                         this.magicEssenceFactory.createOne(this.getCauldron().x + 50, this.getCauldron().y);
                         this.disableTriggerOnTutorialUseCauldron();
+
+                        this.listenOnceForCauldronUIEvent('potionCreated', () => {
+                            this.player.enableActions();
+
+                            this.ui.setText("Well done apprentice. With that basic knowledge you now have the keys to mastering our craft. \n\nGo out and expand your mastery! \n\nI will check in you from time to time.");
+                        });
                     });
 
                     this.playerTriggeredTutorialUsedCauldron = true;

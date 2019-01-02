@@ -213,6 +213,14 @@ export default class Stage extends Phaser.Scene {
         this.scene.launch('CauldronUI', { scene: this });
     }
 
+    listenOnceForCauldronUIEvent(event, callback) {
+        if (typeof callback !== 'function') callback = () => {};
+
+        this.scene.get('CauldronUI').events.once(event, ev => {
+            callback(ev);
+        });
+    }
+
     pause () {
         this.scene.pause();
 

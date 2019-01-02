@@ -3,7 +3,11 @@ import uiConfig from '../config/ui';
 import CauldronSlot from '../ui/cauldron-slot';
 
 import Potion from '../props/prop/potion';
-import { POINT_CONVERSION_COMPRESSED } from 'constants';
+import { extractInteractiveIconFromPropFactoryForScene } from '../props/actions/icons';
+
+function getFilledCauldronSlots(slots) {
+    return slots.filter(slot => { return slot.slottedItem !== undefined; });
+}
 
 export default class CauldronUIScene extends Phaser.Scene {
     constructor (config, key = 'CauldronUI') {
@@ -48,18 +52,30 @@ export default class CauldronUIScene extends Phaser.Scene {
         }
 
         // cauldron result potion
-        let potion = new Potion(this);
-        this.potionIcon = potion.inventoryItem.generateIcon(this);
-        this.potionIcon.setScale(2);
-        this.potionIcon.setPosition(uiConfig.cauldron.width / 2 + this.potionIcon.width / 2, 100)
+        this.potionIcon = extractInteractiveIconFromPropFactoryForScene({
+            scene: this, 
+            propFactory: () => { return new Potion(this); }, 
+            x: uiConfig.cauldron.width / 2, 
+            y: 100
+        });
         this.add.existing(this.potionIcon);
-        potion.remove();
         this.potionIcon.visible = false;
+
+        // This implies we are creating a potion
+        this.potionIcon.on('pointerup', () => {
+            getFilledCauldronSlots(this.cauldronSlots).forEach(slot => {
+                slot.slottedItem.itemGroup.decrement();
+            });
+            console.log('clicked', this.stageScene.player.inventory.list);
+            this.events.emit('potionCreated');
+            this.resumeStage();
+        });
 
         // display player inventory
         let inventoryStartX = width - 300;
         let inventoryStartY = 50;
         let inventoryPadding = 10;
+        console.log(this.stageScene.player.inventory.list);
         this.stageScene.player.inventory.list.forEach(itemGroup => {
             let draggableIcon = itemGroup.item.generateIcon(this, inventoryStartX, inventoryStartY).setInteractive();
             draggableIcon.itemGroup = itemGroup;
@@ -69,7 +85,7 @@ export default class CauldronUIScene extends Phaser.Scene {
             this.input.setDraggable(draggableIcon);
 
             // descriptive text
-            let text = this.add.text(inventoryStartX + draggableIcon.width + inventoryPadding, inventoryStartY, itemGroup.item.label + ' x ' + itemGroup.quantity, { fontFamily: 'Arial', fontSize: 20, color: '#ffffff' });
+            this.add.text(inventoryStartX + draggableIcon.width + inventoryPadding, inventoryStartY, itemGroup.item.label + ' x ' + itemGroup.quantity, { fontFamily: 'Arial', fontSize: 20, color: '#ffffff' });
 
             inventoryStartY += 50;
         });
@@ -133,8 +149,16 @@ export default class CauldronUIScene extends Phaser.Scene {
         });
     }
 
+    resumeStage () {
+        // resume the current stage scene
+        this.stageScene.resume();
+
+        // put myself to sleep
+        this.scene.sleep();
+    }
+
     update () {
-        let filledCauldronSlots = this.cauldronSlots.filter(slot => { return slot.slottedItem !== undefined; });
+        let filledCauldronSlots = getFilledCauldronSlots(this.cauldronSlots);
 
         if (filledCauldronSlots.length > 0) {
             this.potionIcon.visible = true;
@@ -145,11 +169,7 @@ export default class CauldronUIScene extends Phaser.Scene {
         if (this.inputKeys.exit.isDown) {
             this.inputKeys.exit.isDown = false; // reset the key so it isn't remembered
 
-            // resume the current stage scene
-            this.stageScene.resume();
-
-            // put myself to sleep
-            this.scene.sleep();
+            this.resumeStage();
 
             return;
         }
